@@ -11,7 +11,6 @@ für macOS, Windows und Linux.
 | Windows (übliche PCs) | `Mediathek-Extractor-…-Windows-Installer.exe` |
 | Windows auf ARM (z. B. Surface Pro X, Windows in UTM/Parallels auf dem Mac) | `Mediathek-Extractor-…-Windows-ARM-Installer.exe` |
 | Linux (alle Distributionen) | `Mediathek-Extractor-…-Linux.AppImage` |
-
 | Linux Debian/Ubuntu bzw. Fedora | `…-Linux-Debian-Ubuntu.deb` bzw. `…-Linux-Fedora.rpm` |
 | Windows ohne Installation (z. B. USB-Stick) | `…-Windows-portabel.zip` bzw. `…-Windows-ARM-portabel.zip` |
 
