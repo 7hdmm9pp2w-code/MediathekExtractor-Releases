@@ -11,8 +11,11 @@ für macOS, Windows und Linux.
 | Windows (übliche PCs) | `Mediathek-Extractor-…-Windows-Installer.exe` |
 | Windows auf ARM (z. B. Surface Pro X, Windows in UTM/Parallels auf dem Mac) | `Mediathek-Extractor-…-Windows-ARM-Installer.exe` |
 | Linux (alle Distributionen) | `Mediathek-Extractor-…-Linux.AppImage` |
+
 | Linux Debian/Ubuntu bzw. Fedora | `…-Linux-Debian-Ubuntu.deb` bzw. `…-Linux-Fedora.rpm` |
 | Windows ohne Installation (z. B. USB-Stick) | `…-Windows-portabel.zip` bzw. `…-Windows-ARM-portabel.zip` |
+
+**Linux:** Version 0.6.0 gibt es nicht für Linux – bitte [0.5.0](../../releases/tag/v0.5.0) verwenden. Die nächste Version kommt wieder für alle Systeme.
 
 „Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
 diese Anleitung, nicht die App.
