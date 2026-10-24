@@ -26,6 +26,9 @@ diese Anleitung, nicht die App.
 - **Serien:** nach Staffeln sortiert, „Staffel laden“, „✓ geladen“
 - **Vorschau** direkt in der App
 - **Automatische Updates** ab Version 0.4.0
+- **Merkliste:** Filme mit Ablauf-Erinnerung, Serien mit neuen Folgen
+- **Empfehlungen** von filmdienst.de
+- **Einfach- und Profi-Modus** (Profi mit Protokoll aller Aktionen)
 
 ## Erster Start
 
@@ -36,6 +39,19 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 0.5.0
+
+- **Empfehlungen:** „Sehenswert in Mediatheken“ von filmdienst.de als eigene Quelle – mit Sternen, Ablaufdatum und Link zur Kritik.
+- **Qualität wählen:** Beste (HD), Standard (bis 720p) oder Klein – spart Platz.
+- **Übersichtlicher:** Senderleiste bricht um statt zu scrollen; Staffel-Ansicht nur bei echten Serien.
+- **kinogrid:** „Alle Angebote laden“ statt nur YouTube.
+- **Audiodeskription und Gebärdensprache** sind standardmäßig ausgeblendet („alle Fassungen“ zeigt sie).
+- **Einfach und Profi:** „Einfach“ zeigt nur das Nötigste (Suchen, Herunterladen, Vorschau – die Originalfassung kommt automatisch als zweite Tonspur mit). „Profi“ zeigt alle Optionen und ein **Protokoll** aller yt-dlp- und ffmpeg-Aufrufe.
+- **Untertitel in die MP4** als zuschaltbare Spur statt separater Datei.
+- **Infos in der Datei:** Titel, Sender, Datum, Beschreibung und bei Serien Serie/Staffel/Folge – Player und Plex/Jellyfin/Kodi zeigen sie an; auf Wunsch zusätzlich eine .nfo-Datei.
+- **Merkliste (★):** Filme merken – die App erinnert beim Start, wenn sie in 3 Tagen ablaufen. Serien verfolgen – neue Folgen erscheinen in der Merkliste und lassen sich mit einem Klick (oder automatisch) laden.
+- **Senderlogo entfernen (experimentell):** Die App findet das Logo (z. B. ZDF, ARTE) und kodiert das Video ohne Logo neu. Bei ruhigem Hintergrund unsichtbar, bei unruhigem bleibt ein weicher Fleck.
 
 ### 0.4.0
 
