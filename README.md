@@ -8,7 +8,7 @@ für macOS, Windows und Linux.
 | System | Datei |
 |---|---|
 | macOS (Apple Silicon und Intel) | `…_universal.dmg` |
-| Windows (übliche PCs) | `…_x64-setup.exe` oder `…_x64_de-DE.msi` |
+| Windows (übliche PCs) | `…_x64-setup.exe` oder `…_x64_en-US.msi` |
 | Windows auf ARM (z. B. Surface, Windows in UTM/Parallels auf dem Mac) | `…_arm64-setup.exe` |
 | Linux | `…_amd64.AppImage` oder `…_amd64.deb` |
 
