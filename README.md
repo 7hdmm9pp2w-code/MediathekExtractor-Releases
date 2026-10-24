@@ -56,11 +56,20 @@ Erste veröffentlichte Version.
 - **Suchverlauf** mit den letzten fünf Suchen.
 - Installer für macOS (Apple Silicon und Intel), Windows (auch ARM) und Linux.
 
+## Danksagung und verwendete Projekte
+
+Der Mediathek-Extractor ist eine Oberfläche, die auf hervorragender freier Software und offenen Daten aufbaut:
+
+- **[yt-dlp](https://github.com/yt-dlp/yt-dlp)** – lädt Streams, Video-Seiten und MP3. Ohne yt-dlp ginge vieles nicht. Die App liefert yt-dlp nicht mit, sondern nutzt eine vorhandene Installation oder lädt auf Wunsch die offizielle Version.
+- **[FFmpeg](https://ffmpeg.org)** – fügt Bild und Tonspuren zusammen, wandelt in MP3 um. Ebenfalls nicht mitgeliefert; unter Windows auf Wunsch aus den [yt-dlp-FFmpeg-Builds](https://github.com/yt-dlp/FFmpeg-Builds).
+- **[MediathekViewWeb](https://mediathekviewweb.de)** und das Projekt **[MediathekView](https://mediathekview.de)** – die Datenbasis der Mediathek-Suche. Wer die App nützlich findet, kann MediathekView [unterstützen](https://mediathekview.de/spenden/).
+- **[kinogrid.com](https://kinogrid.com)** – Verzeichnis kostenloser Filme.
+- **[Tauri](https://tauri.app)** (MIT/Apache-2.0), **[hls.js](https://github.com/video-dev/hls.js)** (Apache-2.0) und **[Noto Emoji](https://github.com/googlefonts/noto-emoji)** (Apache-2.0, App-Icon).
+
+Alle genannten Projekte sind unabhängig und nicht für diese App verantwortlich.
+
 ## Hinweise
 
-- Für Streams und MP3 nutzt die App [yt-dlp](https://github.com/yt-dlp/yt-dlp) und ffmpeg.
-  Fehlen sie, bietet die App den Download der offiziellen Versionen an.
 - Bitte nur für Inhalte nutzen, die du privat speichern darfst. Kopiergeschützte Inhalte lädt die App nicht.
-- Das App-Icon nutzt 📺 aus [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache License 2.0).
 
 Dieses Repository enthält nur die Installer; der Quellcode ist nicht öffentlich.
