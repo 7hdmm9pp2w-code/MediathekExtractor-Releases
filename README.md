@@ -23,7 +23,9 @@ diese Anleitung, nicht die App.
 - **Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
 - **Herunterladen** mit Warteschlange, automatischem Fortsetzen nach Verbindungsabbrüchen, MP3 und Untertiteln (SRT)
 - **Deutsch + Original in einer Datei:** zwei Tonspuren statt zwei Filme
+- **Serien:** nach Staffeln sortiert, „Staffel laden“, „✓ geladen“
 - **Vorschau** direkt in der App
+- **Automatische Updates** ab Version 0.4.0
 
 ## Erster Start
 
@@ -33,6 +35,21 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 0.4.0
+
+- **Serien nach Staffeln:** Folgen landen in „Serie/Staffel 02/Serie – S02E04 – Titel.mp4“ – so erkennen Plex, Jellyfin und Kodi sie sofort (abschaltbar in den Einstellungen).
+- **Serien-Ansicht:** Treffer nach Serie und Staffel gruppiert, mit „Staffel laden“ für alle noch fehlenden Folgen.
+- **Übersichtlichere Liste:** Hörfilm-, Gebärdensprach-, Untertitel- und OV-Fassungen sowie Wiederholungen werden zusammengefasst („alle Fassungen“ zeigt sie wieder).
+- **„✓ geladen“:** Die App merkt sich, was schon heruntergeladen wurde.
+- **Automatische Updates:** Neue Versionen meldet die App selbst und installiert sie auf Wunsch.
+
+### 0.3.1
+
+- **Bessere Titel beim Einfügen von Seiten-URLs:** Ein einzelnes Video heißt jetzt wie die Seite (z. B. „Ein unmöglicher Zufall“) statt wie die Datei.
+- **Hinweis, wenn yt-dlp fehlt:** Bei ARTE, ZDF, ARD & Co. bietet die App yt-dlp zum Laden an – für Titel, Beschreibung, beste Qualität und alle Sprachen.
+- **Über-Fenster mit Danksagung** an yt-dlp, FFmpeg, MediathekView und die anderen verwendeten Projekte (ⓘ oben rechts).
+- **Hinweis:** Die App hat eine neue interne Kennung. Zielordner und Suchverlauf müssen einmalig neu eingestellt werden.
 
 ### 0.3.0
 
