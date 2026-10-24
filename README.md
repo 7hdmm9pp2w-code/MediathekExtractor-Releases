@@ -12,6 +12,7 @@ für macOS, Windows und Linux.
 | Windows auf ARM (z. B. Surface Pro X, Windows in UTM/Parallels auf dem Mac) | `Mediathek-Extractor-…-Windows-ARM-Installer.exe` |
 | Linux (alle Distributionen) | `Mediathek-Extractor-…-Linux.AppImage` |
 | Linux Debian/Ubuntu bzw. Fedora | `…-Linux-Debian-Ubuntu.deb` bzw. `…-Linux-Fedora.rpm` |
+| Windows ohne Installation (z. B. USB-Stick) | `…-Windows-portabel.zip` bzw. `…-Windows-ARM-portabel.zip` |
 
 „Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
 diese Anleitung, nicht die App.
@@ -29,6 +30,9 @@ diese Anleitung, nicht die App.
 - **Merkliste:** Filme mit Ablauf-Erinnerung, Serien mit neuen Folgen
 - **Empfehlungen** von filmdienst.de
 - **Einfach- und Profi-Modus** (Profi mit Protokoll aller Aktionen)
+- **Mehrfachauswahl und Sortieren** der Trefferliste
+- **Beschreibung nachladen** vom Sender oder aus der Wikipedia
+- **Windows portabel** ohne Installation
 
 ## Erster Start
 
@@ -39,6 +43,19 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 0.6.0
+
+- **Deutsch + Original** auch, wenn man nach „Originalversion“ sucht – die deutsche Fassung wird automatisch dazugesucht.
+- **„✓ geladen“** gilt nur für die tatsächlich geladene Fassung.
+- **„Alle“** sagt, was es lädt („Deutsch + Original“ oder „nur Deutsch“).
+- **Abbrechen** hinterlässt keine Teil-Dateien mehr (auch unter Windows); Reste werden beim Start aufgeräumt.
+- **Empfehlungen/Merkliste:** keine Verwechslung mit der vorherigen Suche mehr.
+- **Mehrfachauswahl:** ⌘/Strg-Klick, Shift-Klick für Bereiche, ⌘/Strg+A für alle – dann „Herunterladen“ oder „Merken“.
+- **Windows portabel:** ZIP ohne Installation, alle Daten bleiben im Ordner neben dem Programm (z. B. auf einem USB-Stick). Updates dort per neuer ZIP.
+- **Sortieren:** nach Datum, Titel, Dauer, Sender, „läuft bald ab“ oder Bewertung – je Quelle gemerkt.
+- **Beschreibung nachladen:** Fehlt eine Beschreibung (kinogrid, Empfehlungen, eingefügte Seiten), holt die App sie vom Sender – oder aus der Wikipedia (nur wenn es eindeutig dieser Film ist, mit Quellenangabe).
+- Suchverlauf entfernt.
 
 ### 0.5.0
 
