@@ -7,10 +7,14 @@ für macOS, Windows und Linux.
 
 | System | Datei |
 |---|---|
-| macOS (Apple Silicon und Intel) | `…_universal.dmg` |
-| Windows (übliche PCs) | `…_x64-setup.exe` oder `…_x64_en-US.msi` |
-| Windows auf ARM (z. B. Surface, Windows in UTM/Parallels auf dem Mac) | `…_arm64-setup.exe` |
-| Linux | `…_amd64.AppImage` oder `…_amd64.deb` |
+| Mac (Apple Silicon und Intel) | `Mediathek-Extractor-…-macOS.dmg` |
+| Windows (übliche PCs) | `Mediathek-Extractor-…-Windows-Installer.exe` |
+| Windows auf ARM (z. B. Surface Pro X, Windows in UTM/Parallels auf dem Mac) | `Mediathek-Extractor-…-Windows-ARM-Installer.exe` |
+| Linux (alle Distributionen) | `Mediathek-Extractor-…-Linux.AppImage` |
+| Linux Debian/Ubuntu bzw. Fedora | `…-Linux-Debian-Ubuntu.deb` bzw. `…-Linux-Fedora.rpm` |
+
+„Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
+diese Anleitung, nicht die App.
 
 ## Erster Start
 
