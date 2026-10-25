@@ -35,6 +35,7 @@ diese Anleitung, nicht die App.
 - **Windows portabel** ohne Installation
 - **Einrichtung beim ersten Start**, „Später starten“ (z. B. nachts), Größe und Speicherplatz vorab
 - **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache
+- **Filminfos** (Jahr, Genre, Regie, Besetzung) mit Filtern, **Suche nach Regie und Darstellern**, **Dateinamen nach Wunsch** (z. B. „Jahr – Titel“)
 
 ## Erster Start
 
@@ -45,6 +46,15 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 1.1.0
+
+- **Vorschau unter Windows** für ARD- und ARTE-Seiten (z. B. die filmdienst-Empfehlungen): neuere Windows-Versionen behaupten, solche Streams selbst abspielen zu können, scheitern aber – jetzt übernimmt immer der eingebaute Player.
+- **Liste:** Die Filterzeile bricht bei schmaler Liste um, statt in die Detailansicht zu ragen.
+- **Filminfos:** Zu Spielfilmen holt die App Jahr, Genre, Regie und Besetzung (aus Wikidata). Die Liste zeigt das Jahr; neue Leisten filtern nach **Genre** und **Jahrzehnt**; das Filterfeld findet auch Regie und Darsteller; in der Detailansicht filtert ein Klick auf einen Namen.
+- **Filme einer Person suchen:** „Regie: Hitchcock“ oder „mit: Romy Schneider“ im Suchfeld – die App sucht alle Filme der Person in den Mediatheken (Titel, Jahr und Laufzeit müssen passen).
+- **Dateinamen nach Wunsch:** „Jahr – Titel“, „Titel (Jahr)“, „Titel“, „Datum – Sender – Titel“ oder eine eigene Vorlage, getrennt für Filme und Serienfolgen, mit Vorschau. Das Jahr kommt bei Bedarf aus der Filminfo.
+- **Untertitel zusätzlich als .srt-Datei** („Film.de.srt“, „Film.en.srt“) – die Windows-Medienwiedergabe zeigt in MP4 eingebettete Untertitel nicht an. Unter Windows standardmäßig an, sonst im Profi-Modus einschaltbar.
 
 ### 1.0.0
 
