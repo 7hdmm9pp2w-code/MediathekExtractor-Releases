@@ -5,6 +5,8 @@ für macOS, Windows und Linux.
 
 **Installer:** unter [Releases](../../releases/latest).
 
+> **Aktuell:** 0.7.1 gibt es nur für Macs mit Apple Silicon. Für **Intel-Macs, Windows und Linux** bitte [0.7.0](../../releases/tag/v0.7.0) nehmen.
+
 | System | Datei |
 |---|---|
 | Mac (Apple Silicon und Intel) | `Mediathek-Extractor-…-macOS.dmg` |
@@ -45,6 +47,12 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 0.7.1
+
+Nur für Macs mit Apple Silicon (M1 und neuer).
+
+- **macOS:** Die Frage nach Zugriff auf den Ordner „Downloads“ kommt nur noch einmal (je Version) statt bei jedem Start – die App ist jetzt vollständig (ad hoc) signiert.
 
 ### 0.7.0
 
