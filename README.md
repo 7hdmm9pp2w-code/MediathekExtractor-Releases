@@ -11,10 +11,8 @@ für macOS, Windows und Linux.
 | Windows (übliche PCs) | `Mediathek-Extractor-…-Windows-Installer.exe` |
 | Windows auf ARM (z. B. Surface Pro X, Windows in UTM/Parallels auf dem Mac) | `Mediathek-Extractor-…-Windows-ARM-Installer.exe` |
 | Linux (alle Distributionen) | `Mediathek-Extractor-…-Linux.AppImage` |
-| Linux Debian/Ubuntu bzw. Fedora | `…-Linux-Debian-Ubuntu.deb` bzw. `…-Linux-Fedora.rpm` |
+| Linux Debian/Ubuntu | `…-Linux-Debian-Ubuntu.deb` |
 | Windows ohne Installation (z. B. USB-Stick) | `…-Windows-portabel.zip` bzw. `…-Windows-ARM-portabel.zip` |
-
-**Linux:** Version 0.6.0 gibt es nicht für Linux – bitte [0.5.0](../../releases/tag/v0.5.0) verwenden. Die nächste Version kommt wieder für alle Systeme.
 
 „Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
 diese Anleitung, nicht die App.
@@ -35,6 +33,8 @@ diese Anleitung, nicht die App.
 - **Mehrfachauswahl und Sortieren** der Trefferliste
 - **Beschreibung nachladen** vom Sender oder aus der Wikipedia
 - **Windows portabel** ohne Installation
+- **Einrichtung beim ersten Start**, „Später starten“ (z. B. nachts), Größe und Speicherplatz vorab
+- **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache
 
 ## Erster Start
 
@@ -45,6 +45,22 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 0.7.0
+
+- **Einrichtung beim ersten Start:** Zielordner, yt-dlp/ffmpeg mit einem Klick, „Für Plex/Jellyfin/Kodi vorbereiten“.
+- **Fenster:** Die Liste links bleibt beim Vergrößern gleich breit (Trennlinie ziehbar, Doppelklick = Standard) – nur Vorschau und Beschreibung wachsen.
+- **Später starten:** Warteschlange zu einer Uhrzeit starten (z. B. nachts); dazu Geschwindigkeit begrenzen (je Download).
+- **Größe vorher:** Die Detailansicht zeigt die Dateigröße (bei Mediathek-Dateien) und warnt, wenn der Platz nicht reicht. Downloads starten nicht mehr auf ein volles Laufwerk.
+- **„✓ vorhanden“:** Liegt eine Datei mit gleichem Namen schon im Zielordner, zeigt die Liste das – „Staffel laden“ überspringt sie.
+- **„Fehler kopieren“:** Bei fehlgeschlagenen Downloads kopiert ein Knopf Meldung und Protokoll – zum Weiterschicken.
+- **Einfach-Modus:** ein Schalter „Für Plex/Jellyfin/Kodi vorbereiten“ statt vier einzelner (Profi behält alle).
+- **Merkliste** prüft auch bei laufender App alle 6 Stunden auf neue Folgen.
+- **Deutsch + Original für alle Treffer:** Bei der Suche nach „originalversion“ sucht die App die deutsche Fassung jetzt für alle Filme nach (bisher nur für 10) und findet sie auch, wenn die ARD sie unter anderem Thema führt (z. B. „Perfect Days“). Filme, die es nur im Original gibt, zeigt die Liste als „nur Original“.
+- **Untertitel als Spur statt eingebrannt:** Bei ARTE lädt die App immer das Bild ohne eingebrannte Untertitel und legt die deutschen Untertitel als zuschaltbare Spur dazu – bei Originalfassungen zusätzlich die Untertitel in der Originalsprache, falls ARTE sie anbietet (z. B. Englisch + Deutsch). ARTE-Originalfassungen aus der Mediathek-Suche kommen dafür über die ARTE-Seite. Fassungen „mit Untertitel“ (eingebrannt) stehen unter „alle Fassungen“, wenn es die saubere gibt.
+- **Untertitel nicht mehr doppelt:** Bei Deutsch + Original kam dieselbe Untertiteldatei zweimal in die MP4 (die ARD hat eine Datei für alle Fassungen) – jetzt nur einmal.
+- **Downloads:** kein .msi und kein .rpm mehr (Windows-Installer .exe, Linux AppImage/.deb bleiben).
+- **Linux wieder dabei:** Abbrechen eines Downloads beendet nur noch den Download – in 0.6.0 konnte es alle Programme des Benutzers beenden (0.6.0 gab es deshalb nicht für Linux).
 
 ### 0.6.0
 
