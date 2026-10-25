@@ -46,6 +46,13 @@ Die Installer sind nicht signiert:
 
 ## Versionen
 
+### 1.0.0
+
+Die erste stabile Version – getestet auf Mac und Windows (Apple Silicon, Intel über Universal-App, Windows ARM in UTM). Gegenüber 0.7.2 nur Feinschliff:
+
+- **Abgebrochene Serienfolgen** hinterlassen keine leeren Ordner „Serie/Staffel …“ mehr.
+- **Geschwindigkeitsgrenze:** Hinweis, dass sie für Downloads gilt, die danach starten.
+
 ### 0.7.2
 
 Für alle Systeme (Mac mit Apple Silicon und Intel, Windows, Linux).
