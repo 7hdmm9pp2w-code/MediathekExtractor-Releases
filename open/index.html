@@ -54,14 +54,19 @@
     document.getElementById("title").textContent = title;
     document.title = title + " – Mediathek-Extractor";
   }
+  // In der App per Titel suchen – zuverlässiger als die Sender-Seite: deren Adresse in den
+  // Mediathek-Daten ist manchmal veraltet (ARD: 404), der Film selbst aber noch da
+  const search = query || title;
   let appUrl = "";
-  if (allowed(page)) {
+  if (search) {
+    appUrl = "mediathek-extractor://suche?q=" + encodeURIComponent(search);
+  } else if (allowed(page)) {
     appUrl = "mediathek-extractor://seite?url=" + encodeURIComponent(page);
+  }
+  if (allowed(page)) {
     const sender = document.getElementById("sender");
     sender.href = page;
     sender.hidden = false;
-  } else if (query) {
-    appUrl = "mediathek-extractor://suche?q=" + encodeURIComponent(query);
   }
   const app = document.getElementById("app");
   if (appUrl) {
