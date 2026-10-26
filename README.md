@@ -35,7 +35,8 @@ diese Anleitung, nicht die App.
 - **Windows portabel** ohne Installation
 - **Einrichtung beim ersten Start**, „Später starten“ (z. B. nachts), Größe und Speicherplatz vorab
 - **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache
-- **Filminfos** (Jahr, Genre, Regie, Besetzung) mit Filtern, **Suche nach Regie und Darstellern**, **Dateinamen nach Wunsch** (z. B. „Jahr – Titel“)
+- **Filminfos** (Jahr, Genre, Regie, Besetzung – über TMDB für fast jeden Film) mit Filtern, **Suche nach Regie und Darstellern**, **Dateinamen nach Wunsch** (z. B. „Jahr – Titel“)
+- **Teilen** über das System (Mac, Windows), als Text oder per E-Mail; **App weiterempfehlen**
 
 ## Erster Start
 
@@ -46,6 +47,16 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 1.2.0
+
+- **Filminfos jetzt für fast alle Filme:** Neben Wikidata nutzt die App **TMDB** (The Movie Database) – die kennt auch die vielen deutschen TV-Filme. Getestet an 200 Mediathek-Filmen: Infos zu 94 % (bisher 65 %), das Jahr stimmte in allen prüfbaren Fällen. Die Besetzung steht jetzt in Rollenreihenfolge (Hauptrollen zuerst). Auch „Regie: …“/„mit: …“ sucht über TMDB.
+- **Filminfos treffsicherer:** Das Jahr aus der Senderangabe („Spielfilm Deutschland 2001 …“, 3sat: „… - Spielfilm, Frankreich 1990“) verhindert Verwechslungen mit gleichnamigen älteren Filmen. 3sat-Titel erscheinen in Dateinamen ohne diesen Zusatz.
+- **Namen anklickbar:** In der Beschreibung (z. B. „Melanie (Melani Lenz)“) und bei Regie/Besetzung – ein Klick bietet „in dieser Liste“ oder „alle Filme suchen“.
+- **Teilen:** „Teilen…“ in der Detailansicht – über das Teilen-Menü des Systems (Mac: AirDrop, Nachrichten, Mail …; Windows: Teilen-Dialog mit Mail, Teams, Geräten in der Nähe …), überall auch als Text zum Kopieren oder per E-Mail, mit Link zur Sender-Seite.
+- **App empfehlen:** im Über-Fenster und im Teilen-Menü – Text mit Link zur Download-Seite.
+- **Senderschreibweise** überall einheitlich (z. B. „3sat“).
+- Detailansicht: Leerzeichen zwischen den Namen bei Regie und Besetzung.
 
 ### 1.1.0
 
