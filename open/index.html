@@ -63,9 +63,22 @@
   } else if (allowed(page)) {
     appUrl = "mediathek-extractor://seite?url=" + encodeURIComponent(page);
   }
+  // „Beim Sender ansehen“: Suche nach dem Titel in der Mediathek des Senders – die gespeicherte
+  // Seitenadresse ist manchmal veraltet; ohne Titel bleibt nur die Seite selbst
+  const senderSearch = (url, t) => {
+    if (!t) return url;
+    const host = new URL(url).hostname;
+    const q = encodeURIComponent(t);
+    if (host.endsWith("zdf.de")) return "https://www.zdf.de/suche?q=" + q;
+    if (host.endsWith("arte.tv")) return "https://www.arte.tv/de/search/?q=" + q;
+    if (host.endsWith("3sat.de")) return "https://www.3sat.de/suche?q=" + q;
+    if (host.endsWith("kika.de")) return "https://www.kika.de/suche?q=" + q;
+    if (host.endsWith("orf.at") || host.endsWith("srf.ch")) return url;
+    return "https://www.ardmediathek.de/suche/" + q; // ARD und die Dritten
+  };
   if (allowed(page)) {
     const sender = document.getElementById("sender");
-    sender.href = page;
+    sender.href = senderSearch(page, title);
     sender.hidden = false;
   }
   const app = document.getElementById("app");
