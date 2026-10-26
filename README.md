@@ -164,6 +164,8 @@ Der Mediathek-Extractor ist eine Oberfläche, die auf hervorragender freier Soft
 - **[FFmpeg](https://ffmpeg.org)** – fügt Bild und Tonspuren zusammen, wandelt in MP3 um. Ebenfalls nicht mitgeliefert; unter Windows auf Wunsch aus den [yt-dlp-FFmpeg-Builds](https://github.com/yt-dlp/FFmpeg-Builds).
 - **[MediathekViewWeb](https://mediathekviewweb.de)** und das Projekt **[MediathekView](https://mediathekview.de)** – die Datenbasis der Mediathek-Suche. Wer die App nützlich findet, kann MediathekView [unterstützen](https://mediathekview.de/spenden/).
 - **[kinogrid.com](https://kinogrid.com)** – Verzeichnis kostenloser Filme.
+- **[TMDB](https://www.themoviedb.org)** – Filminfos (Jahr, Genre, Regie, Besetzung) und Personensuche. *This product uses the TMDB API but is not endorsed or certified by TMDB.*
+- **[Wikidata](https://www.wikidata.org)** (CC0) und **[Wikipedia](https://de.wikipedia.org)** (CC BY-SA) – Filminfos, wo TMDB nichts kennt, und Beschreibungen, wenn der Sender keine liefert.
 - **[Tauri](https://tauri.app)** (MIT/Apache-2.0), **[hls.js](https://github.com/video-dev/hls.js)** (Apache-2.0) und **[Noto Emoji](https://github.com/googlefonts/noto-emoji)** (Apache-2.0, App-Icon).
 
 Alle genannten Projekte sind unabhängig und nicht für diese App verantwortlich.
