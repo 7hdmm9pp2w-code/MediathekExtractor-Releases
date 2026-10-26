@@ -48,6 +48,21 @@ Die Installer sind nicht signiert:
 
 ## Versionen
 
+### 1.3.0
+
+- **Kein doppeltes Laden aus Versehen:** Steht ein Film schon in der Warteschlange oder wurde er schon geladen, fragt die App nach. Bei mehreren Filmen auf einmal lassen sich die schon vorhandenen überspringen. Nach dem Klick zeigt der Knopf kurz „✓ In der Warteschlange“.
+- **Warteschlange bleibt nach dem Neustart:** Die letzten 50 Downloads (fertig, fehlgeschlagen, abgebrochen) erscheinen wieder. Was beim Beenden noch lief, steht als „Unterbrochen“ da und startet mit „Wiederholen“ neu.
+- **Nicht mehr verfügbare Filme:** Hat der Sender ein Video entfernt (depubliziert), sagt das die Detailansicht schon vorher, und der Download-Knopf ist gesperrt. Scheitert ein Download daran, steht dort „Nicht mehr verfügbar“ statt eines Fehlercodes.
+- **Kein Hängenbleiben:** Bleiben Daten aus, versucht die App es erneut (direkte Dateien, fortgesetzt an der erreichten Stelle). Streams über yt-dlp brechen nach 5 Minuten ohne Daten mit einer klaren Meldung ab.
+- **yt-dlp:** Die App-eigene Kopie aktualisiert sich jetzt täglich. Ist ein selbst installiertes yt-dlp (Homebrew, winget …) veraltet, weist die App darauf hin und zeigt den passenden Befehl zum Aktualisieren. Der Fortschritt kommt in einem eigenen, festen Format von yt-dlp und hängt nicht mehr an dessen Textausgabe; er zeigt jetzt auch die Größe wie bei direkten Downloads.
+- **🎲 Überrasch mich:** Der Würfel neben der Sortierung springt zu einem zufälligen Video der Liste.
+- **Statistik:** Das Über-Fenster zählt die geladenen Filme und Folgen, ihre Laufzeit, die Größe und das Lieblingsgenre. Zum Angeben lässt sich das teilen. Bei runden Zahlen gibt es in der Fertig-Mitteilung einen kleinen Jubel.
+- **Teilen mit Genre-Emoji:** Geteilte Filmtipps beginnen mit 📺 und einem Emoji zum Genre, z. B. 📺🤠 für einen Western oder 📺🔪 für einen Krimi.
+- Beim Suchen ein Spruch aus der Fernsehwelt, und nachts ein Gruß zum Sendeschluss.
+- Im Über-Fenster versteckt sich ein Easter Egg. 🤫
+
+Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung von 1.3 folgt Anfang November.
+
 ### 1.2.2
 
 - **Geteilte Links öffnen die App:** Der Link im Teilen-Text führt auf eine kleine Seite, die den Film direkt in Mediathek-Extractor öffnet – ohne App zeigt sie die Sender-Seite und den Download. Funktioniert in jedem Messenger und per Mail.
