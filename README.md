@@ -36,7 +36,7 @@ diese Anleitung, nicht die App.
 - **Einrichtung beim ersten Start**, „Später starten“ (z. B. nachts), Größe und Speicherplatz vorab
 - **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache
 - **Filminfos** (Jahr, Genre, Regie, Besetzung – über TMDB für fast jeden Film) mit Filtern, **Suche nach Regie und Darstellern**, **Dateinamen nach Wunsch** (z. B. „Jahr – Titel“)
-- **Teilen** über das System (Mac, Windows), als Text oder per E-Mail; **App weiterempfehlen**
+- **Teilen** über das System (Mac, Windows), als Text oder per E-Mail – geteilte Links öffnen den Film direkt in der App; **App weiterempfehlen**
 
 ## Erster Start
 
@@ -47,6 +47,11 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+### 1.2.2
+
+- **Geteilte Links öffnen die App:** Der Link im Teilen-Text führt auf eine kleine Seite, die den Film direkt in Mediathek-Extractor öffnet – ohne App zeigt sie die Sender-Seite und den Download. Funktioniert in jedem Messenger und per Mail.
+- **Links in die App:** `mediathek-extractor://suche?q=…` (auch „Regie: …“/„mit: …“) und `mediathek-extractor://seite?url=…` (nur Seiten der Sender). Läuft die App schon, öffnet sich der Link im vorhandenen Fenster.
 
 ### 1.2.0
 
