@@ -14,6 +14,14 @@ für macOS, Windows und Linux.
 | Linux Debian/Ubuntu | `…-Linux-Debian-Ubuntu.deb` |
 | Windows ohne Installation (z. B. USB-Stick) | `…-Windows-portabel.zip` bzw. `…-Windows-ARM-portabel.zip` |
 
+**Mac mit Homebrew** – installiert yt-dlp und ffmpeg gleich mit:
+
+```bash
+brew tap 7hdmm9pp2w-code/tap
+brew trust 7hdmm9pp2w-code/tap
+brew install --cask mediathek-extractor
+```
+
 „Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
 diese Anleitung, nicht die App.
 
@@ -22,12 +30,13 @@ diese Anleitung, nicht die App.
 - **Mediatheken durchsuchen** (ARD, ZDF, ARTE, 3sat, Dritte …) – mit Senderauswahl und Filter „nur ab 60 Min.“
 - **Kostenlose Filme finden** über kinogrid.com, mit „verfügbar bis“
 - **Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
-- **Herunterladen** mit Warteschlange, automatischem Fortsetzen nach Verbindungsabbrüchen, MP3 und Untertiteln (SRT)
+- **Herunterladen** mit Warteschlange, **Anhalten und Fortsetzen**, automatischem Fortsetzen nach Verbindungsabbrüchen, MP3/M4A und Untertiteln (SRT)
 - **Deutsch + Original in einer Datei:** zwei Tonspuren statt zwei Filme
 - **Serien:** nach Staffeln sortiert, „Staffel laden“, „✓ geladen“
 - **Vorschau** direkt in der App
-- **Automatische Updates** ab Version 0.4.0
-- **Merkliste:** Filme mit Ablauf-Erinnerung, Serien mit neuen Folgen
+- **Automatische Updates** – Fehlerbehebungen kommen still im Hintergrund
+- **Merkliste:** Filme mit Ablauf-Erinnerung, Serien mit neuen Folgen, **gemerkte Suchen** mit neuen Treffern
+- **Bewertungen** (TMDB), **Film des Tages**, „⏳ läuft bald ab“
 - **Empfehlungen** von filmdienst.de
 - **Einfach- und Profi-Modus** (Profi mit Protokoll aller Aktionen)
 - **Mehrfachauswahl und Sortieren** der Trefferliste
@@ -36,7 +45,8 @@ diese Anleitung, nicht die App.
 - **Einrichtung beim ersten Start**, „Später starten“ (z. B. nachts), Größe und Speicherplatz vorab
 - **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache
 - **Filminfos** (Jahr, Genre, Regie, Besetzung – über TMDB für fast jeden Film) mit Filtern, **Suche nach Regie und Darstellern**, **Dateinamen nach Wunsch** (z. B. „Jahr – Titel“)
-- **Teilen** über das System (Mac, Windows), als Text oder per E-Mail – geteilte Links öffnen den Film direkt in der App; **App weiterempfehlen**
+- **Bedienung mit der Tastatur** (⌘/Strg+F, Pfeiltasten, Kontextmenü per Taste) und für VoiceOver/Sprachausgabe
+- **Teilen** – auch mehrere Filme auf einmal – über das System (Mac, Windows), als Text oder per E-Mail – geteilte Links öffnen den Film direkt in der App; **App weiterempfehlen**
 
 ## Erster Start
 
@@ -47,6 +57,21 @@ Die Installer sind nicht signiert:
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
 
 ## Versionen
+
+Neue Funktionen kommen etwa alle zwei Monate, Fehlerbehebungen bei Bedarf – die spielt die App
+von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
+
+### 1.5.0
+
+- **Downloads anhalten und fortsetzen:** „⏸ Anhalten“ an jedem Download und „Alle anhalten“ über der Warteschlange. „▶ Fortsetzen“ lädt an der erreichten Stelle weiter – auch bei Streams und nach einem Neustart der App.
+- **Genaue Suche:** Begriffe in Anführungszeichen finden nur das ganze Wort – „"Eis"“ findet das Eis, aber nicht mehr „Reise“, „Kreis“ oder „Preis“.
+- **Mehr Originalfassungen bei der ARD:** Manche Originalversionen führt nur die ARD-Mediathek selbst (z. B. „Amerikanische Fiktion“). Die App findet sie jetzt auch – mit „+ OV“ und Deutsch + Original.
+- **Mehrere Filme teilen:** in der Merkliste Häkchen setzen, in anderen Listen mit ⌘/Strg-Klick auswählen, in der Warteschlange über „Teilen…“ – eine Nachricht mit allen Filmtipps und Links.
+- **Updates nebenbei:** Die App sieht auch während des Betriebs nach neuen Versionen und lädt sie im Hintergrund. Fehlerbehebungen kommen ohne Hinweisleiste beim nächsten Start.
+- **Tastatur:** ⌘/Strg+F springt ins Suchfeld, Menütaste oder Umschalt+F10 öffnen das Kontextmenü, Enter lädt herunter, Esc schließt Dialoge, ein Rahmen zeigt den Fokus. Für VoiceOver und die Windows-Sprachausgabe beschriftet.
+- **Homebrew:** auf dem Mac jetzt auch per `brew install --cask` (siehe oben).
+
+Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 
 ### 1.4.0
 
@@ -75,130 +100,6 @@ Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 - **Teilen mit Genre-Emoji:** Geteilte Filmtipps beginnen mit 📺 und einem Emoji zum Genre, z. B. 📺🤠 für einen Western oder 📺🔪 für einen Krimi.
 - Beim Suchen ein Spruch aus der Fernsehwelt, und nachts ein Gruß zum Sendeschluss.
 - Im Über-Fenster versteckt sich ein Easter Egg. 🤫
-
-### 1.2.2
-
-- **Geteilte Links öffnen die App:** Der Link im Teilen-Text führt auf eine kleine Seite, die den Film direkt in Mediathek-Extractor öffnet – ohne App zeigt sie die Sender-Seite und den Download. Funktioniert in jedem Messenger und per Mail.
-- **Links in die App:** `mediathek-extractor://suche?q=…` (auch „Regie: …“/„mit: …“) und `mediathek-extractor://seite?url=…` (nur Seiten der Sender). Läuft die App schon, öffnet sich der Link im vorhandenen Fenster.
-
-### 1.2.0
-
-- **Filminfos jetzt für fast alle Filme:** Neben Wikidata nutzt die App **TMDB** (The Movie Database) – die kennt auch die vielen deutschen TV-Filme. Getestet an 200 Mediathek-Filmen: Infos zu 94 % (bisher 65 %), das Jahr stimmte in allen prüfbaren Fällen. Die Besetzung steht jetzt in Rollenreihenfolge (Hauptrollen zuerst). Auch „Regie: …“/„mit: …“ sucht über TMDB.
-- **Filminfos treffsicherer:** Das Jahr aus der Senderangabe („Spielfilm Deutschland 2001 …“, 3sat: „… - Spielfilm, Frankreich 1990“) verhindert Verwechslungen mit gleichnamigen älteren Filmen. 3sat-Titel erscheinen in Dateinamen ohne diesen Zusatz.
-- **Namen anklickbar:** In der Beschreibung (z. B. „Melanie (Melani Lenz)“) und bei Regie/Besetzung – ein Klick bietet „in dieser Liste“ oder „alle Filme suchen“.
-- **Teilen:** „Teilen…“ in der Detailansicht – über das Teilen-Menü des Systems (Mac: AirDrop, Nachrichten, Mail …; Windows: Teilen-Dialog mit Mail, Teams, Geräten in der Nähe …), überall auch als Text zum Kopieren oder per E-Mail, mit Link zur Sender-Seite.
-- **App empfehlen:** im Über-Fenster und im Teilen-Menü – Text mit Link zur Download-Seite.
-- **Senderschreibweise** überall einheitlich (z. B. „3sat“).
-- Detailansicht: Leerzeichen zwischen den Namen bei Regie und Besetzung.
-
-### 1.1.0
-
-- **Vorschau unter Windows** für ARD- und ARTE-Seiten (z. B. die filmdienst-Empfehlungen): neuere Windows-Versionen behaupten, solche Streams selbst abspielen zu können, scheitern aber – jetzt übernimmt immer der eingebaute Player.
-- **Liste:** Die Filterzeile bricht bei schmaler Liste um, statt in die Detailansicht zu ragen.
-- **Filminfos:** Zu Spielfilmen holt die App Jahr, Genre, Regie und Besetzung (aus Wikidata). Die Liste zeigt das Jahr; neue Leisten filtern nach **Genre** und **Jahrzehnt**; das Filterfeld findet auch Regie und Darsteller; in der Detailansicht filtert ein Klick auf einen Namen.
-- **Filme einer Person suchen:** „Regie: Hitchcock“ oder „mit: Romy Schneider“ im Suchfeld – die App sucht alle Filme der Person in den Mediatheken (Titel, Jahr und Laufzeit müssen passen).
-- **Dateinamen nach Wunsch:** „Jahr – Titel“, „Titel (Jahr)“, „Titel“, „Datum – Sender – Titel“ oder eine eigene Vorlage, getrennt für Filme und Serienfolgen, mit Vorschau. Das Jahr kommt bei Bedarf aus der Filminfo.
-- **Untertitel zusätzlich als .srt-Datei** („Film.de.srt“, „Film.en.srt“) – die Windows-Medienwiedergabe zeigt in MP4 eingebettete Untertitel nicht an. Unter Windows standardmäßig an, sonst im Profi-Modus einschaltbar.
-
-### 1.0.0
-
-Die erste stabile Version – getestet auf Mac und Windows (Apple Silicon, Intel über Universal-App, Windows ARM in UTM). Gegenüber 0.7.2 nur Feinschliff:
-
-- **Abgebrochene Serienfolgen** hinterlassen keine leeren Ordner „Serie/Staffel …“ mehr.
-- **Geschwindigkeitsgrenze:** Hinweis, dass sie für Downloads gilt, die danach starten.
-
-### 0.7.2
-
-Für alle Systeme (Mac mit Apple Silicon und Intel, Windows, Linux).
-
-- **Kleiner:** Das Programm ist um gut ein Drittel geschrumpft (z. B. Mac-App für Apple Silicon 5 statt 8 MB).
-- **macOS:** Die Frage nach Zugriff auf den Ordner „Downloads“ kommt nur noch einmal (je Version) statt bei jedem Start – jetzt auch auf Intel-Macs (bisher nur 0.7.1 für Apple Silicon).
-- Interner Umbau der Download-Steuerung (übersichtlicher, gleiches Verhalten); Updates nutzen die Verschlüsselung des Systems.
-
-### 0.7.1
-
-Nur für Macs mit Apple Silicon (M1 und neuer).
-
-- **macOS:** Die Frage nach Zugriff auf den Ordner „Downloads“ kommt nur noch einmal (je Version) statt bei jedem Start – die App ist jetzt vollständig (ad hoc) signiert.
-
-### 0.7.0
-
-- **Einrichtung beim ersten Start:** Zielordner, yt-dlp/ffmpeg mit einem Klick, „Für Plex/Jellyfin/Kodi vorbereiten“.
-- **Fenster:** Die Liste links bleibt beim Vergrößern gleich breit (Trennlinie ziehbar, Doppelklick = Standard) – nur Vorschau und Beschreibung wachsen.
-- **Später starten:** Warteschlange zu einer Uhrzeit starten (z. B. nachts); dazu Geschwindigkeit begrenzen (je Download).
-- **Größe vorher:** Die Detailansicht zeigt die Dateigröße (bei Mediathek-Dateien) und warnt, wenn der Platz nicht reicht. Downloads starten nicht mehr auf ein volles Laufwerk.
-- **„✓ vorhanden“:** Liegt eine Datei mit gleichem Namen schon im Zielordner, zeigt die Liste das – „Staffel laden“ überspringt sie.
-- **„Fehler kopieren“:** Bei fehlgeschlagenen Downloads kopiert ein Knopf Meldung und Protokoll – zum Weiterschicken.
-- **Einfach-Modus:** ein Schalter „Für Plex/Jellyfin/Kodi vorbereiten“ statt vier einzelner (Profi behält alle).
-- **Merkliste** prüft auch bei laufender App alle 6 Stunden auf neue Folgen.
-- **Deutsch + Original für alle Treffer:** Bei der Suche nach „originalversion“ sucht die App die deutsche Fassung jetzt für alle Filme nach (bisher nur für 10) und findet sie auch, wenn die ARD sie unter anderem Thema führt (z. B. „Perfect Days“). Filme, die es nur im Original gibt, zeigt die Liste als „nur Original“.
-- **Untertitel als Spur statt eingebrannt:** Bei ARTE lädt die App immer das Bild ohne eingebrannte Untertitel und legt die deutschen Untertitel als zuschaltbare Spur dazu – bei Originalfassungen zusätzlich die Untertitel in der Originalsprache, falls ARTE sie anbietet (z. B. Englisch + Deutsch). ARTE-Originalfassungen aus der Mediathek-Suche kommen dafür über die ARTE-Seite. Fassungen „mit Untertitel“ (eingebrannt) stehen unter „alle Fassungen“, wenn es die saubere gibt.
-- **Untertitel nicht mehr doppelt:** Bei Deutsch + Original kam dieselbe Untertiteldatei zweimal in die MP4 (die ARD hat eine Datei für alle Fassungen) – jetzt nur einmal.
-- **Downloads:** kein .msi und kein .rpm mehr (Windows-Installer .exe, Linux AppImage/.deb bleiben).
-- **Linux wieder dabei:** Abbrechen eines Downloads beendet nur noch den Download – in 0.6.0 konnte es alle Programme des Benutzers beenden (0.6.0 gab es deshalb nicht für Linux).
-
-### 0.6.0
-
-- **Deutsch + Original** auch, wenn man nach „Originalversion“ sucht – die deutsche Fassung wird automatisch dazugesucht.
-- **„✓ geladen“** gilt nur für die tatsächlich geladene Fassung.
-- **„Alle“** sagt, was es lädt („Deutsch + Original“ oder „nur Deutsch“).
-- **Abbrechen** hinterlässt keine Teil-Dateien mehr (auch unter Windows); Reste werden beim Start aufgeräumt.
-- **Empfehlungen/Merkliste:** keine Verwechslung mit der vorherigen Suche mehr.
-- **Mehrfachauswahl:** ⌘/Strg-Klick, Shift-Klick für Bereiche, ⌘/Strg+A für alle – dann „Herunterladen“ oder „Merken“.
-- **Windows portabel:** ZIP ohne Installation, alle Daten bleiben im Ordner neben dem Programm (z. B. auf einem USB-Stick). Updates dort per neuer ZIP.
-- **Sortieren:** nach Datum, Titel, Dauer, Sender, „läuft bald ab“ oder Bewertung – je Quelle gemerkt.
-- **Beschreibung nachladen:** Fehlt eine Beschreibung (kinogrid, Empfehlungen, eingefügte Seiten), holt die App sie vom Sender – oder aus der Wikipedia (nur wenn es eindeutig dieser Film ist, mit Quellenangabe).
-- Suchverlauf entfernt.
-
-### 0.5.0
-
-- **Empfehlungen:** „Sehenswert in Mediatheken“ von filmdienst.de als eigene Quelle – mit Sternen, Ablaufdatum und Link zur Kritik.
-- **Qualität wählen:** Beste (HD), Standard (bis 720p) oder Klein – spart Platz.
-- **Übersichtlicher:** Senderleiste bricht um statt zu scrollen; Staffel-Ansicht nur bei echten Serien.
-- **kinogrid:** „Alle Angebote laden“ statt nur YouTube.
-- **Audiodeskription und Gebärdensprache** sind standardmäßig ausgeblendet („alle Fassungen“ zeigt sie).
-- **Einfach und Profi:** „Einfach“ zeigt nur das Nötigste (Suchen, Herunterladen, Vorschau – die Originalfassung kommt automatisch als zweite Tonspur mit). „Profi“ zeigt alle Optionen und ein **Protokoll** aller yt-dlp- und ffmpeg-Aufrufe.
-- **Untertitel in die MP4** als zuschaltbare Spur statt separater Datei.
-- **Infos in der Datei:** Titel, Sender, Datum, Beschreibung und bei Serien Serie/Staffel/Folge – Player und Plex/Jellyfin/Kodi zeigen sie an; auf Wunsch zusätzlich eine .nfo-Datei.
-- **Merkliste (★):** Filme merken – die App erinnert beim Start, wenn sie in 3 Tagen ablaufen. Serien verfolgen – neue Folgen erscheinen in der Merkliste und lassen sich mit einem Klick (oder automatisch) laden.
-- **Senderlogo entfernen (experimentell):** Die App findet das Logo (z. B. ZDF, ARTE) und kodiert das Video ohne Logo neu. Bei ruhigem Hintergrund unsichtbar, bei unruhigem bleibt ein weicher Fleck.
-
-### 0.4.0
-
-- **Serien nach Staffeln:** Folgen landen in „Serie/Staffel 02/Serie – S02E04 – Titel.mp4“ – so erkennen Plex, Jellyfin und Kodi sie sofort (abschaltbar in den Einstellungen).
-- **Serien-Ansicht:** Treffer nach Serie und Staffel gruppiert, mit „Staffel laden“ für alle noch fehlenden Folgen.
-- **Übersichtlichere Liste:** Hörfilm-, Gebärdensprach-, Untertitel- und OV-Fassungen sowie Wiederholungen werden zusammengefasst („alle Fassungen“ zeigt sie wieder).
-- **„✓ geladen“:** Die App merkt sich, was schon heruntergeladen wurde.
-- **Automatische Updates:** Neue Versionen meldet die App selbst und installiert sie auf Wunsch.
-
-### 0.3.1
-
-- **Bessere Titel beim Einfügen von Seiten-URLs:** Ein einzelnes Video heißt jetzt wie die Seite (z. B. „Ein unmöglicher Zufall“) statt wie die Datei.
-- **Hinweis, wenn yt-dlp fehlt:** Bei ARTE, ZDF, ARD & Co. bietet die App yt-dlp zum Laden an – für Titel, Beschreibung, beste Qualität und alle Sprachen.
-- **Über-Fenster mit Danksagung** an yt-dlp, FFmpeg, MediathekView und die anderen verwendeten Projekte (ⓘ oben rechts).
-- **Hinweis:** Die App hat eine neue interne Kennung. Zielordner und Suchverlauf müssen einmalig neu eingestellt werden.
-
-### 0.3.0
-
-- **Senderauswahl:** Knopf „Sender“ unter der Suche, mehrere Sender gleichzeitig (Haupt-, Dritte, Sparten- und Auslandssender). Mit gewählten Sendern geht die Suche auch ohne Suchbegriff – z. B. „alles Neue von ARTE“.
-- **Sender in der Ergebnisliste:** Leiste mit Trefferzahl je Sender, ein Klick filtert.
-- **Filter „nur ab 60 Min.“:** blendet Trailer, Clips und kurze Beiträge aus.
-- **Deutsch + Original in einer Datei:** Gibt es zu einem Film die Originalfassung („+ OV“ in der Liste), lädt die App das Bild einmal und legt deutschen Ton und Originalton als zwei Tonspuren in eine Datei – statt zwei Dateien mit je mehreren Gigabyte.
-- **Alle Sprachen in einer Datei** bei ARTE-Seiten (z. B. Deutsch und Französisch).
-- **kinogrid:** Option, weitere Anbieter als ladbar zu behandeln (Einstellungen in der Warteschlange).
-
-### 0.2.0
-
-Erste veröffentlichte Version.
-
-- **Mediathek-Suche** über mediathekviewweb (ARD, ZDF, ARTE, 3sat, Dritte …) mit Titel, Sender, Dauer, Datum und Beschreibung.
-- **kinogrid.com** als zweite Quelle für kostenlose Filme, mit „verfügbar bis“.
-- **Videos aus Seiten auslesen:** Seiten-URL einfügen – die App findet die Videos, auch auf Übersichtsseiten mit mehreren Filmen.
-- **Downloads:** Warteschlange mit zwei parallelen Downloads, Fortschritt, Abbrechen und Wiederholen; abgebrochene Verbindungen werden automatisch fortgesetzt.
-- **MP3** und **Untertitel** (als SRT) auf Wunsch.
-- **Vorschau** direkt in der App.
-- **Suchverlauf** mit den letzten fünf Suchen.
-- Installer für macOS (Apple Silicon und Intel), Windows (auch ARM) und Linux.
 
 ## Danksagung und verwendete Projekte
 
