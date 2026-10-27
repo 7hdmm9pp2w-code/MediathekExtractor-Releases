@@ -48,6 +48,21 @@ Die Installer sind nicht signiert:
 
 ## Versionen
 
+### 1.4.0
+
+- **🔔 Suche merken (Suchabo):** Neben „Alle“ lässt sich eine Suche merken, z. B. „Regie: …“ oder ein Stichwort. Neue Treffer erscheinen in der Merkliste mit „✓ Gesehen“ und „⬇ Neue laden“, auf Wunsch lädt die App sie automatisch. Dazu gibt es eine Mitteilung.
+- **★ Bewertung:** Filme zeigen ihre Bewertung von TMDB in der Liste und in der Detailansicht. Neue Sortierung „Bewertung (TMDB)“ und Knopf „★ ab 7“ in der Genre-Leiste.
+- **🎬 Film des Tages:** Auf der Startseite steht jeden Tag ein gut bewerteter Spielfilm aus den Mediatheken. Mit ✕ verschwindet er bis morgen.
+- **⏳ Läuft bald ab:** Filme, die in wenigen Tagen aus der Mediathek verschwinden, zeigen „noch 2 Tage“. Neue Sortierung „läuft bald ab“.
+- **Filmplakate:** in der Detailansicht und als „Film-poster.jpg“ neben dem Film, wenn „.nfo-Datei“ eingeschaltet ist (für Kodi, Jellyfin, Plex).
+- **Nur Ton als M4A:** Im Profi-Modus lässt sich wählen, ob „Nur Ton“ als MP3 oder M4A gespeichert wird.
+- **Zahl am Dock-Symbol:** Der Mac zeigt am App-Symbol, wie viele Downloads gerade laufen.
+- **Behoben:** Die Personensuche fand bei häufigen Filmtiteln (z. B. „Undine“) nicht alle Filme. ARTE-Filme, die es nur mit eingebrannten Untertiteln gibt, waren versteckt.
+
+Beim ersten Start holt die App die Filminfos einmal neu (wegen Bewertung und Plakat). Die Filminfos erscheinen deshalb anfangs etwas langsamer.
+
+Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
+
 ### 1.3.0
 
 - **Kein doppeltes Laden aus Versehen:** Steht ein Film schon in der Warteschlange oder wurde er schon geladen, fragt die App nach. Bei mehreren Filmen auf einmal lassen sich die schon vorhandenen überspringen. Nach dem Klick zeigt der Knopf kurz „✓ In der Warteschlange“.
@@ -60,8 +75,6 @@ Die Installer sind nicht signiert:
 - **Teilen mit Genre-Emoji:** Geteilte Filmtipps beginnen mit 📺 und einem Emoji zum Genre, z. B. 📺🤠 für einen Western oder 📺🔪 für einen Krimi.
 - Beim Suchen ein Spruch aus der Fernsehwelt, und nachts ein Gruß zum Sendeschluss.
 - Im Über-Fenster versteckt sich ein Easter Egg. 🤫
-
-Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung von 1.3 folgt Anfang November.
 
 ### 1.2.2
 
