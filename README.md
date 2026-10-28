@@ -63,6 +63,14 @@ Die Installer sind nicht signiert:
 Neue Funktionen kommen etwa alle zwei Monate, Fehlerbehebungen bei Bedarf – die spielt die App
 von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
 
+### 1.5.2
+
+- **Filminfos schneller und nach und nach:** Bewertung, Jahr und Genre erscheinen zuerst für die Filme, die gerade zu sehen sind, und dann laufend für den Rest – statt alle auf einmal nach bis zu einer Minute.
+- **Suche ohne Hänger:** Große Suchen laden ihre Seiten gleichzeitig; antwortet eine Seite nicht, fragt die App nach 12 Sekunden noch einmal. Originalfassungen aus der ARD-Mediathek kommen im Hintergrund dazu.
+- **„🔔 Benachrichtigen, wenn es kommt“:** Findet die Suche nichts, lässt sie sich gleich merken. Taucht der Film später auf, meldet sich die App.
+- **Zur Bewertung durchklicken:** In der Detailansicht führt „bei TMDB“ zur Filmseite.
+- **Update bereit:** Liegt eine neue Version bereit, zeigt die App das jetzt auch bei Fehlerbehebungen – mit „Jetzt neu starten“.
+
 ### 1.5.1
 
 - **Bessere Treffer-Reihenfolge:** Oben steht, was am besten passt – Titel genau wie gesucht vor Treffern im Thema oder als Wortteil, Spielfilme vor Clips, Hauptfassungen vor Audiodeskription. Beispiel „transit“: Der Kinofilm steht jetzt auf Platz 1 statt auf Platz 39.
@@ -79,21 +87,6 @@ von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Release
 - **Updates nebenbei:** Die App sieht auch während des Betriebs nach neuen Versionen und lädt sie im Hintergrund. Fehlerbehebungen kommen ohne Hinweisleiste beim nächsten Start.
 - **Tastatur:** ⌘/Strg+F springt ins Suchfeld, Menütaste oder Umschalt+F10 öffnen das Kontextmenü, Enter lädt herunter, Esc schließt Dialoge, ein Rahmen zeigt den Fokus. Für VoiceOver und die Windows-Sprachausgabe beschriftet.
 - **Homebrew:** auf dem Mac jetzt auch per `brew install --cask` (siehe oben).
-
-Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
-
-### 1.4.0
-
-- **🔔 Suche merken (Suchabo):** Neben „Alle“ lässt sich eine Suche merken, z. B. „Regie: …“ oder ein Stichwort. Neue Treffer erscheinen in der Merkliste mit „✓ Gesehen“ und „⬇ Neue laden“, auf Wunsch lädt die App sie automatisch. Dazu gibt es eine Mitteilung.
-- **★ Bewertung:** Filme zeigen ihre Bewertung von TMDB in der Liste und in der Detailansicht. Neue Sortierung „Bewertung (TMDB)“ und Knopf „★ ab 7“ in der Genre-Leiste.
-- **🎬 Film des Tages:** Auf der Startseite steht jeden Tag ein gut bewerteter Spielfilm aus den Mediatheken. Mit ✕ verschwindet er bis morgen.
-- **⏳ Läuft bald ab:** Filme, die in wenigen Tagen aus der Mediathek verschwinden, zeigen „noch 2 Tage“. Neue Sortierung „läuft bald ab“.
-- **Filmplakate:** in der Detailansicht und als „Film-poster.jpg“ neben dem Film, wenn „.nfo-Datei“ eingeschaltet ist (für Kodi, Jellyfin, Plex).
-- **Nur Ton als M4A:** Im Profi-Modus lässt sich wählen, ob „Nur Ton“ als MP3 oder M4A gespeichert wird.
-- **Zahl am Dock-Symbol:** Der Mac zeigt am App-Symbol, wie viele Downloads gerade laufen.
-- **Behoben:** Die Personensuche fand bei häufigen Filmtiteln (z. B. „Undine“) nicht alle Filme. ARTE-Filme, die es nur mit eingebrannten Untertiteln gibt, waren versteckt.
-
-Beim ersten Start holt die App die Filminfos einmal neu (wegen Bewertung und Plakat). Die Filminfos erscheinen deshalb anfangs etwas langsamer.
 
 Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 
