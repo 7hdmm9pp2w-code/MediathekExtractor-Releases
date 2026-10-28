@@ -3,8 +3,8 @@
 Suche und Download aus den Mediatheken der öffentlich-rechtlichen Sender (ARD, ZDF, ARTE, 3sat …)
 für macOS, Windows und Linux.
 
-**Download:** [neueste Version](../../releases/latest) – dort steht auch, welche Datei für welches System ist.
-Auf dem Mac geht es auch mit [Homebrew](#installieren).
+**Download:** [neueste Version](../../releases/latest) – dort steht auch, welche Datei für welches System ist,
+wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
 
 ## Worauf wir stolz sind
 
@@ -31,27 +31,6 @@ Auf dem Mac geht es auch mit [Homebrew](#installieren).
 - **Einrichtung beim ersten Start** – yt-dlp lädt die App auf Wunsch selbst (unter Windows auch FFmpeg), auf dem Mac zeigt sie den passenden Homebrew-Befehl
 - **Windows portabel** ohne Installation, z. B. vom USB-Stick
 - **App weiterempfehlen** aus dem Über-Fenster
-
-## Installieren
-
-Installer für Mac, Windows und Linux unter [Releases](../../releases/latest) – mit Tabelle, welche Datei für welches System ist.
-
-**Mac mit Homebrew** – installiert yt-dlp und ffmpeg gleich mit:
-
-```bash
-brew tap 7hdmm9pp2w-code/tap
-brew trust 7hdmm9pp2w-code/tap
-brew install --cask mediathek-extractor
-```
-
-**Erster Start:** Die Installer sind nicht signiert:
-
-- **macOS:** App in „Programme“ ziehen und einmal öffnen – macOS meldet „nicht geöffnet“ → **Fertig**. Dann **Systemeinstellungen → Datenschutz & Sicherheit**, ganz unten bei „Mediathek-Extractor wurde blockiert“ auf **Dennoch öffnen** klicken und mit Passwort bzw. Touch ID bestätigen. Nur einmal nötig; Updates kommen danach automatisch.
-  Alternativ im Terminal: `xattr -dr com.apple.quarantine /Applications/Mediathek-Extractor.app`
-- **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
-
-„Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
-diese Anleitung, nicht die App.
 
 ## Versionen
 
