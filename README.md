@@ -33,8 +33,8 @@ wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
 
 ## Versionen
 
-Neue Funktionen kommen etwa alle zwei Monate, Fehlerbehebungen bei Bedarf – die spielt die App
-von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
+Neue Versionen kommen, wenn es gute neue Ideen gibt oder Fehler gemeldet werden. Fehlerbehebungen
+spielt die App von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
 
 ### 1.5.2
 
@@ -62,6 +62,12 @@ von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Release
 - **Homebrew:** auf dem Mac jetzt auch per `brew install --cask` (siehe [Releases](../../releases/latest)).
 
 Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
+
+## Fehler gefunden? Idee?
+
+Gern melden – unter [Issues → New issue](../../issues/new/choose) gibt es dafür zwei kurze Formulare:
+**Fehler melden** (mit Version, System und was passiert ist) und **Idee vorschlagen**.
+Dafür braucht man ein kostenloses GitHub-Konto. Meldungen dort sind öffentlich – bitte keine persönlichen Daten eintragen.
 
 ## Danksagung und verwendete Projekte
 

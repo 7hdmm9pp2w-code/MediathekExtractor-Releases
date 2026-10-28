@@ -1,0 +1,54 @@
+name: Fehler melden
+description: Etwas funktioniert nicht wie erwartet
+title: "Fehler: "
+labels: ["Fehler"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du dir die Zeit nimmst! Je genauer die Angaben, desto schneller lässt sich der Fehler finden.
+        Bitte keine persönlichen Daten (Name, Adresse, Passwörter) eintragen – Meldungen hier sind öffentlich.
+  - type: input
+    id: version
+    attributes:
+      label: Version der App
+      description: Steht im Über-Fenster (ⓘ oben rechts), z. B. 1.5.2
+      placeholder: "1.5.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - Mac (Apple-Chip)
+        - Mac (Intel)
+        - Windows
+        - Windows auf ARM
+        - Linux
+    validations:
+      required: true
+  - type: textarea
+    id: was
+    attributes:
+      label: Was ist passiert?
+      description: Was hast du gemacht, was ist dann passiert? Z. B. „Suche nach ‚tatort‘, Download von … bricht bei 40 % ab“
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was hättest du erwartet?
+  - type: input
+    id: link
+    attributes:
+      label: Link zum Video (falls es um einen bestimmten Film geht)
+      placeholder: "https://www.ardmediathek.de/…"
+  - type: textarea
+    id: protokoll
+    attributes:
+      label: Protokoll (optional)
+      description: |
+        Bei einem gescheiterten Download: in der Warteschlange „Fehler kopieren“ und hier einfügen.
+        Sonst im Profi-Modus „Protokoll“ → „Kopieren“. Bitte vorher durchsehen.
+      render: text
