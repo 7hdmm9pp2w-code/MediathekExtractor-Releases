@@ -1,7 +1,6 @@
 # Mediathek-Extractor – Entdecken. Laden. Teilen.
 
-Suche und Download aus den Mediatheken der öffentlich-rechtlichen Sender (ARD, ZDF, ARTE, 3sat …)
-für macOS, Windows und Linux.
+Gute Filme in den Mediatheken entdecken, bevor sie verschwinden, mit einem Klick laden und als Tipp verschicken – für Mac, Windows und Linux.
 
 **Download:** [neueste Version](../../releases/latest) – dort steht auch, welche Datei für welches System ist,
 wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
