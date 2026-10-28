@@ -60,7 +60,7 @@ von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Release
 - **Mehrere Filme teilen:** in der Merkliste Häkchen setzen, in anderen Listen mit ⌘/Strg-Klick auswählen, in der Warteschlange über „Teilen…“ – eine Nachricht mit allen Filmtipps und Links.
 - **Updates nebenbei:** Die App sieht auch während des Betriebs nach neuen Versionen und lädt sie im Hintergrund. Fehlerbehebungen kommen ohne Hinweisleiste beim nächsten Start.
 - **Tastatur:** ⌘/Strg+F springt ins Suchfeld, Menütaste oder Umschalt+F10 öffnen das Kontextmenü, Enter lädt herunter, Esc schließt Dialoge, ein Rahmen zeigt den Fokus. Für VoiceOver und die Windows-Sprachausgabe beschriftet.
-- **Homebrew:** auf dem Mac jetzt auch per `brew install --cask` (siehe oben).
+- **Homebrew:** auf dem Mac jetzt auch per `brew install --cask` (siehe [Releases](../../releases/latest)).
 
 Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 
