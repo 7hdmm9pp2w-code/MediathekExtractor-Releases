@@ -39,7 +39,7 @@ diese Anleitung, nicht die App.
 ## Was die App sonst noch kann
 
 - **Gezielt suchen:** Senderauswahl, „nur ab 60 Min.“, die besten Treffer zuerst, Begriffe in Anführungszeichen als ganzes Wort
-- **Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
+- **(Auch mehrere) Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
 - **Kostenlose Filme finden** über kinogrid.com, mit „verfügbar bis“, und **Empfehlungen** von filmdienst.de
 - **Vorschau** direkt in der App
 - **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache; auf Wunsch als SRT-Datei
