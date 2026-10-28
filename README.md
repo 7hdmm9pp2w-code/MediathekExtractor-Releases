@@ -5,27 +5,8 @@ für macOS, Windows und Linux.
 
 **Entdecken. Laden. Teilen.**
 
-**Installer:** unter [Releases](../../releases/latest).
-
-| System | Datei |
-|---|---|
-| Mac (Apple Silicon und Intel) | `Mediathek-Extractor-…-macOS.dmg` |
-| Windows (übliche PCs) | `Mediathek-Extractor-…-Windows-Installer.exe` |
-| Windows auf ARM (z. B. Surface Pro X, Windows in UTM/Parallels auf dem Mac) | `Mediathek-Extractor-…-Windows-ARM-Installer.exe` |
-| Linux (alle Distributionen) | `Mediathek-Extractor-…-Linux.AppImage` |
-| Linux Debian/Ubuntu | `…-Linux-Debian-Ubuntu.deb` |
-| Windows ohne Installation (z. B. USB-Stick) | `…-Windows-portabel.zip` bzw. `…-Windows-ARM-portabel.zip` |
-
-**Mac mit Homebrew** – installiert yt-dlp und ffmpeg gleich mit:
-
-```bash
-brew tap 7hdmm9pp2w-code/tap
-brew trust 7hdmm9pp2w-code/tap
-brew install --cask mediathek-extractor
-```
-
-„Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
-diese Anleitung, nicht die App.
+**Download:** [neueste Version](../../releases/latest) – dort steht auch, welche Datei für welches System ist.
+Auf dem Mac geht es auch mit [Homebrew](#installieren).
 
 ## Worauf wir stolz sind
 
@@ -53,13 +34,26 @@ diese Anleitung, nicht die App.
 - **Windows portabel** ohne Installation, z. B. vom USB-Stick
 - **App weiterempfehlen** aus dem Über-Fenster
 
-## Erster Start
+## Installieren
 
-Die Installer sind nicht signiert:
+Installer für Mac, Windows und Linux unter [Releases](../../releases/latest) – mit Tabelle, welche Datei für welches System ist.
+
+**Mac mit Homebrew** – installiert yt-dlp und ffmpeg gleich mit:
+
+```bash
+brew tap 7hdmm9pp2w-code/tap
+brew trust 7hdmm9pp2w-code/tap
+brew install --cask mediathek-extractor
+```
+
+**Erster Start:** Die Installer sind nicht signiert:
 
 - **macOS:** App in „Programme“ ziehen und einmal öffnen – macOS meldet „nicht geöffnet“ → **Fertig**. Dann **Systemeinstellungen → Datenschutz & Sicherheit**, ganz unten bei „Mediathek-Extractor wurde blockiert“ auf **Dennoch öffnen** klicken und mit Passwort bzw. Touch ID bestätigen. Nur einmal nötig; Updates kommen danach automatisch.
   Alternativ im Terminal: `xattr -dr com.apple.quarantine /Applications/Mediathek-Extractor.app`
 - **Windows:** „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“.
+
+„Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
+diese Anleitung, nicht die App.
 
 ## Versionen
 
