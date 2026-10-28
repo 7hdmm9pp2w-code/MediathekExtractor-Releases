@@ -1,9 +1,7 @@
-# Mediathek-Extractor – Downloads
+# Mediathek-Extractor – Entdecken. Laden. Teilen.
 
 Suche und Download aus den Mediatheken der öffentlich-rechtlichen Sender (ARD, ZDF, ARTE, 3sat …)
 für macOS, Windows und Linux.
-
-**Entdecken. Laden. Teilen.**
 
 **Download:** [neueste Version](../../releases/latest) – dort steht auch, welche Datei für welches System ist.
 Auf dem Mac geht es auch mit [Homebrew](#installieren).
