@@ -27,6 +27,15 @@ brew install --cask mediathek-extractor
 „Source code (zip / tar.gz)“ fügt GitHub automatisch zu jedem Release hinzu – es enthält nur
 diese Anleitung, nicht die App.
 
+## Worauf wir stolz sind
+
+1. **Deutsch und Original in einer Datei.** Die App findet zum Film die Originalfassung – auch die, die nur die ARD-Mediathek selbst führt – und packt beide Tonspuren samt Untertiteln in eine einzige MP4.
+2. **Die Merkliste nimmt auf.** Filme, Serien und ganze Suchen („Regie: Wim Wenders“, oder ein Film, der noch nirgends läuft) verfolgen: Taucht etwas auf, meldet sich die App und lädt es auf Wunsch von selbst. „⏳ noch 2 Tage“ zeigt, was bald verschwindet.
+3. **Ein Filmkatalog statt nackter Titel.** Bewertung (TMDB), Jahr, Genre, Regie, Besetzung und Plakat; filtern nach „★ ab 7“, Genre oder Jahrzehnt; alle Filme einer Schauspielerin in den Mediatheken; jeden Tag ein Film des Tages.
+4. **Downloads, die einfach funktionieren.** Eine Suche über alle öffentlich-rechtlichen Sender; Anhalten und Fortsetzen auch nach einem Neustart; „Staffel laden“; „Später starten“ für die Nacht. yt-dlp, FFmpeg und die App selbst halten sich von allein aktuell.
+5. **Fertig für Plex, Jellyfin und Kodi.** Dateinamen nach eigener Vorlage mit Jahr und Staffel/Folge, dazu .nfo-Datei und Plakat – der Film landet gleich richtig einsortiert in der Mediathek zu Hause.
+6. **Bonus: Filmtipps teilen.** Einen oder mehrere Filme als Nachricht, per E-Mail oder über das System teilen – der Link öffnet den Film beim Empfänger direkt in der App.
+
 ## Was die App kann
 
 - **Mediatheken durchsuchen** (ARD, ZDF, ARTE, 3sat, Dritte …) – mit Senderauswahl und Filter „nur ab 60 Min.“
