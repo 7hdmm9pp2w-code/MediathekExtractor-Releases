@@ -3,6 +3,8 @@
 Suche und Download aus den Mediatheken der öffentlich-rechtlichen Sender (ARD, ZDF, ARTE, 3sat …)
 für macOS, Windows und Linux.
 
+**Entdecken. Laden. Teilen.**
+
 **Installer:** unter [Releases](../../releases/latest).
 
 | System | Datei |
@@ -61,6 +63,13 @@ Die Installer sind nicht signiert:
 Neue Funktionen kommen etwa alle zwei Monate, Fehlerbehebungen bei Bedarf – die spielt die App
 von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
 
+### 1.5.1
+
+- **Bessere Treffer-Reihenfolge:** Oben steht, was am besten passt – Titel genau wie gesucht vor Treffern im Thema oder als Wortteil, Spielfilme vor Clips, Hauptfassungen vor Audiodeskription. Beispiel „transit“: Der Kinofilm steht jetzt auf Platz 1 statt auf Platz 39.
+- **Ladebalken für Filminfos:** „Filminfos 37 / 120“ beim Nachschlagen von Bewertungen, Jahr und Genre; im Profi-Modus mit Quelle und Restzeit.
+- **Nach dem Teilen** endet die Auswahl, kurz erscheint „✓ 3 Filmtipps kopiert“.
+- **Download-Verlauf:** Die App merkt sich fertige Downloads ausführlicher – als Grundlage für spätere Empfehlungen. Nur auf deinem Rechner (siehe [Datenschutz](#datenschutz)).
+
 ### 1.5.0
 
 - **Downloads anhalten und fortsetzen:** „⏸ Anhalten“ an jedem Download und „Alle anhalten“ über der Warteschlange. „▶ Fortsetzen“ lädt an der erreichten Stelle weiter – auch bei Streams und nach einem Neustart der App.
@@ -88,19 +97,6 @@ Beim ersten Start holt die App die Filminfos einmal neu (wegen Bewertung und Pla
 
 Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 
-### 1.3.0
-
-- **Kein doppeltes Laden aus Versehen:** Steht ein Film schon in der Warteschlange oder wurde er schon geladen, fragt die App nach. Bei mehreren Filmen auf einmal lassen sich die schon vorhandenen überspringen. Nach dem Klick zeigt der Knopf kurz „✓ In der Warteschlange“.
-- **Warteschlange bleibt nach dem Neustart:** Die letzten 50 Downloads (fertig, fehlgeschlagen, abgebrochen) erscheinen wieder. Was beim Beenden noch lief, steht als „Unterbrochen“ da und startet mit „Wiederholen“ neu.
-- **Nicht mehr verfügbare Filme:** Hat der Sender ein Video entfernt (depubliziert), sagt das die Detailansicht schon vorher, und der Download-Knopf ist gesperrt. Scheitert ein Download daran, steht dort „Nicht mehr verfügbar“ statt eines Fehlercodes.
-- **Kein Hängenbleiben:** Bleiben Daten aus, versucht die App es erneut (direkte Dateien, fortgesetzt an der erreichten Stelle). Streams über yt-dlp brechen nach 5 Minuten ohne Daten mit einer klaren Meldung ab.
-- **yt-dlp:** Die App-eigene Kopie aktualisiert sich jetzt täglich. Ist ein selbst installiertes yt-dlp (Homebrew, winget …) veraltet, weist die App darauf hin und zeigt den passenden Befehl zum Aktualisieren. Der Fortschritt kommt in einem eigenen, festen Format von yt-dlp und hängt nicht mehr an dessen Textausgabe; er zeigt jetzt auch die Größe wie bei direkten Downloads.
-- **🎲 Überrasch mich:** Der Würfel neben der Sortierung springt zu einem zufälligen Video der Liste.
-- **Statistik:** Das Über-Fenster zählt die geladenen Filme und Folgen, ihre Laufzeit, die Größe und das Lieblingsgenre. Zum Angeben lässt sich das teilen. Bei runden Zahlen gibt es in der Fertig-Mitteilung einen kleinen Jubel.
-- **Teilen mit Genre-Emoji:** Geteilte Filmtipps beginnen mit 📺 und einem Emoji zum Genre, z. B. 📺🤠 für einen Western oder 📺🔪 für einen Krimi.
-- Beim Suchen ein Spruch aus der Fernsehwelt, und nachts ein Gruß zum Sendeschluss.
-- Im Über-Fenster versteckt sich ein Easter Egg. 🤫
-
 ## Danksagung und verwendete Projekte
 
 Der Mediathek-Extractor ist eine Oberfläche, die auf hervorragender freier Software und offenen Daten aufbaut:
@@ -114,6 +110,15 @@ Der Mediathek-Extractor ist eine Oberfläche, die auf hervorragender freier Soft
 - **[Tauri](https://tauri.app)** (MIT/Apache-2.0), **[hls.js](https://github.com/video-dev/hls.js)** (Apache-2.0) und **[Noto Emoji](https://github.com/googlefonts/noto-emoji)** (Apache-2.0, App-Icon).
 
 Alle genannten Projekte sind unabhängig und nicht für diese App verantwortlich.
+
+Und danke an Haiko, Marko, Johannes und Jan fürs Testen und für viele Anregungen.
+
+## Datenschutz
+
+Die App hat keinen eigenen Server, kein Konto und keine Analyse. Merkliste, Download-Verlauf, Statistik und
+Einstellungen liegen nur auf deinem Rechner. Für Suche, Filminfos und Downloads fragt die App direkt bei den
+genannten Diensten an (MediathekViewWeb, TMDB, Wikidata/Wikipedia, ARD-API, kinogrid, filmdienst, Server der
+Sender); diese sehen dabei deine IP-Adresse und den Suchbegriff bzw. Filmtitel. Nach Updates fragt die App bei GitHub.
 
 ## Hinweise
 
