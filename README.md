@@ -36,28 +36,22 @@ diese Anleitung, nicht die App.
 5. **Fertig für Plex, Jellyfin und Kodi.** Dateinamen nach eigener Vorlage mit Jahr und Staffel/Folge, dazu .nfo-Datei und Plakat – der Film landet gleich richtig einsortiert in der Mediathek zu Hause.
 6. **Bonus: Filmtipps teilen.** Einen oder mehrere Filme als Nachricht, per E-Mail oder über das System teilen – der Link öffnet den Film beim Empfänger direkt in der App.
 
-## Was die App kann
+## Was die App sonst noch kann
 
-- **Mediatheken durchsuchen** (ARD, ZDF, ARTE, 3sat, Dritte …) – mit Senderauswahl und Filter „nur ab 60 Min.“
-- **Kostenlose Filme finden** über kinogrid.com, mit „verfügbar bis“
+- **Gezielt suchen:** Senderauswahl, „nur ab 60 Min.“, die besten Treffer zuerst, Begriffe in Anführungszeichen als ganzes Wort
 - **Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
-- **Herunterladen** mit Warteschlange, **Anhalten und Fortsetzen**, automatischem Fortsetzen nach Verbindungsabbrüchen, MP3/M4A und Untertiteln (SRT)
-- **Deutsch + Original in einer Datei:** zwei Tonspuren statt zwei Filme
-- **Serien:** nach Staffeln sortiert, „Staffel laden“, „✓ geladen“
+- **Kostenlose Filme finden** über kinogrid.com, mit „verfügbar bis“, und **Empfehlungen** von filmdienst.de
 - **Vorschau** direkt in der App
-- **Automatische Updates** – Fehlerbehebungen kommen still im Hintergrund
-- **Merkliste:** Filme mit Ablauf-Erinnerung, Serien mit neuen Folgen, **gemerkte Suchen** mit neuen Treffern
-- **Bewertungen** (TMDB), **Film des Tages**, „⏳ läuft bald ab“
-- **Empfehlungen** von filmdienst.de
+- **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache; auf Wunsch als SRT-Datei
+- **Nur Ton** als MP3 oder M4A
+- **Robuste Downloads:** automatisches Fortsetzen nach Verbindungsabbrüchen, Größe und freier Speicherplatz vorab, „✓ geladen“ an allem, was schon da ist
 - **Einfach- und Profi-Modus** (Profi mit Protokoll aller Aktionen)
 - **Mehrfachauswahl und Sortieren** der Trefferliste
 - **Beschreibung nachladen** vom Sender oder aus der Wikipedia
-- **Windows portabel** ohne Installation
-- **Einrichtung beim ersten Start**, „Später starten“ (z. B. nachts), Größe und Speicherplatz vorab
-- **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache
-- **Filminfos** (Jahr, Genre, Regie, Besetzung – über TMDB für fast jeden Film) mit Filtern, **Suche nach Regie und Darstellern**, **Dateinamen nach Wunsch** (z. B. „Jahr – Titel“)
 - **Bedienung mit der Tastatur** (⌘/Strg+F, Pfeiltasten, Kontextmenü per Taste) und für VoiceOver/Sprachausgabe
-- **Teilen** – auch mehrere Filme auf einmal – über das System (Mac, Windows), als Text oder per E-Mail – geteilte Links öffnen den Film direkt in der App; **App weiterempfehlen**
+- **Einrichtung beim ersten Start** – yt-dlp lädt die App auf Wunsch selbst (unter Windows auch FFmpeg), auf dem Mac zeigt sie den passenden Homebrew-Befehl
+- **Windows portabel** ohne Installation, z. B. vom USB-Stick
+- **App weiterempfehlen** aus dem Über-Fenster
 
 ## Erster Start
 
