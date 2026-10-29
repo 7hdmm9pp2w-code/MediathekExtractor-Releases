@@ -12,7 +12,7 @@ wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
 3. **Ein Filmkatalog statt nackter Titel.** Bewertung (TMDB), Jahr, Genre, Regie, Besetzung und Plakat; filtern nach „★ ab 7“, Genre oder Jahrzehnt; alle Filme einer Schauspielerin in den Mediatheken; jeden Tag ein Film des Tages.
 4. **Downloads, die einfach funktionieren.** Eine Suche über alle öffentlich-rechtlichen Sender; Anhalten und Fortsetzen auch nach einem Neustart; „Staffel laden“; „Später starten“ für die Nacht. yt-dlp, FFmpeg und die App selbst halten sich von allein aktuell.
 5. **Fertig für Plex, Jellyfin und Kodi.** Dateinamen nach eigener Vorlage mit Jahr und Staffel/Folge, dazu .nfo-Datei und Plakat – der Film landet gleich richtig einsortiert in der Mediathek zu Hause.
-6. **Bonus: Filmtipps teilen.** Einen oder mehrere Filme als Nachricht, per E-Mail oder über das System teilen – der Link öffnet den Film beim Empfänger direkt in der App.
+6. **Bonus: Filmtipps teilen.** Einen oder viele Filme als übersichtliche Liste mit einem einzigen Link – als Nachricht, per E-Mail oder über das System. Der Link zeigt alle Filme; mit der App übernimmt man sie mit einem Klick.
 
 ## Was die App sonst noch kann
 
