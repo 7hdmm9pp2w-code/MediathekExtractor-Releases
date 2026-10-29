@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Filmtipps – Mediathek-Extractor</title>
+<!-- Listenseite für geteilte Filmtipps: Die Liste steht komprimiert im Fragment des Links
+     (#z… bzw. #j…, Format wie src/lib/shareList.ts) – das Fragment geht nicht an den Server.
+     Keine externen Dateien, kein Tracking. -->
+<style>
+  :root { --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #5d6576; --accent: #3a5bd9; --border: #dfe3ea; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #15171c; --card: #1f2229; --text: #e9ecf2; --muted: #a2a9b8; --accent: #7c97ff; --border: #343844; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 16px; }
+  main { max-width: 640px; margin: 0 auto; }
+  header { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 12px; }
+  .logo { font-size: 32px; }
+  h1 { font-size: 20px; margin: 6px 0 4px; }
+  p { color: var(--muted); margin: 4px 0 12px; }
+  ol { list-style: none; padding: 0; margin: 0; }
+  li { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 8px; }
+  .t { font-weight: 600; overflow-wrap: anywhere; }
+  .facts { color: var(--muted); font-size: 14px; }
+  .soon { color: #c0392b; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  a.btn { display: inline-block; text-align: center; padding: 8px 12px; border-radius: 9px; text-decoration: none; border: 1px solid var(--border); color: var(--text); font-size: 14px; }
+  a.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  header a.btn { display: block; margin-top: 8px; font-size: 16px; padding: 11px 14px; }
+  small { display: block; color: var(--muted); margin: 16px 4px; font-size: 13px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo">📺</div>
+    <h1 id="title">Filmtipps</h1>
+    <p id="hint">Filme aus den Mediatheken von ARD, ZDF, ARTE &amp; Co.</p>
+    <a class="btn primary" id="all" href="#" hidden>Alle in Mediathek-Extractor übernehmen</a>
+    <a class="btn" href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases">Mediathek-Extractor herunterladen</a>
+  </header>
+  <ol id="list"></ol>
+  <small>Mediathek-Extractor sucht und lädt Filme aus den Mediatheken von ARD, ZDF, ARTE, 3sat … – kostenlos für Mac, Windows und Linux. Die Liste steckt nur im Link; gespeichert wird nichts.</small>
+</main>
+<script>
+  // Gleiche Liste wie in der App (src/lib/links.ts): nur Seiten der Sender
+  const ALLOWED = ["ardmediathek.de", "zdf.de", "arte.tv", "3sat.de", "kika.de", "br.de", "ndr.de", "wdr.de", "swr.de", "mdr.de", "rbb-online.de", "hr.de", "sr.de", "phoenix.de", "funk.net", "orf.at", "srf.ch"];
+  const allowed = (url) => {
+    try {
+      const u = new URL(url);
+      const host = u.hostname.toLowerCase();
+      return u.protocol === "https:" && ALLOWED.some((h) => host === h || host.endsWith("." + h));
+    } catch {
+      return false;
+    }
+  };
+  // Wie auf der Link-Seite (open/): beim Sender nach dem Titel suchen – gespeicherte Adressen veralten
+  const senderSearch = (url, t) => {
+    const host = new URL(url).hostname;
+    const q = encodeURIComponent(t);
+    if (host.endsWith("zdf.de")) return "https://www.zdf.de/suche?q=" + q;
+    if (host.endsWith("arte.tv")) return "https://www.arte.tv/de/search/?q=" + q;
+    if (host.endsWith("3sat.de")) return "https://www.3sat.de/suche?q=" + q;
+    if (host.endsWith("kika.de")) return "https://www.kika.de/suche?q=" + q;
+    if (host.endsWith("orf.at") || host.endsWith("srf.ch")) return url;
+    return "https://www.ardmediathek.de/suche/" + q;
+  };
+  const fromBase64url = (s) => Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0));
+  async function decode(data) {
+    const raw = fromBase64url(data.slice(1));
+    let bytes = raw;
+    if (data[0] === "z") {
+      const stream = new Blob([raw]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+      bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+    } else if (data[0] !== "j") return null;
+    const list = JSON.parse(new TextDecoder().decode(bytes));
+    if (!Array.isArray(list)) return null;
+    const str = (x) => (typeof x === "string" ? x.slice(0, 200) : "");
+    const num = (x) => (typeof x === "number" && x > 0 ? Math.round(x) : 0);
+    return list
+      .slice(0, 100)
+      .filter((e) => Array.isArray(e) && typeof e[0] === "string" && e[0].trim())
+      .map((e) => ({ title: str(e[0]).trim(), channel: str(e[1]), page: str(e[2]), minutes: num(e[3]), year: num(e[4]), until: num(e[5]) }));
+  }
+  const channelLabel = (c) => c.replace(/\.DE$/i, "");
+  const dateText = (s) => new Date(s * 1000).toLocaleDateString("de-DE", { day: "numeric", month: "numeric", year: "numeric" });
+  const el = (tag, props = {}, text = "") => Object.assign(document.createElement(tag), props, text ? { textContent: text } : {});
+
+  (async () => {
+    const data = location.hash.slice(1);
+    let films = null;
+    try {
+      films = data ? await decode(data) : null;
+    } catch {
+      films = null;
+    }
+    if (!films || !films.length) {
+      document.getElementById("hint").textContent = "Dieser Link ist unvollständig – vielleicht wurde er beim Kopieren abgeschnitten.";
+      return;
+    }
+    const n = films.length;
+    document.getElementById("title").textContent = n === 1 ? "1 Filmtipp" : n + " Filmtipps";
+    document.title = (n === 1 ? "1 Filmtipp" : n + " Filmtipps") + " – Mediathek-Extractor";
+    document.getElementById("hint").textContent = "Mit Mediathek-Extractor alle auf einmal übernehmen und laden – oder einzeln beim Sender ansehen.";
+    const all = document.getElementById("all");
+    all.href = "mediathek-extractor://liste?d=" + encodeURIComponent(data);
+    all.hidden = false;
+    const now = Date.now() / 1000;
+    const list = document.getElementById("list");
+    for (const f of films) {
+      const li = el("li");
+      li.append(el("div", { className: "t" }, f.title));
+      const facts = [channelLabel(f.channel), f.year ? String(f.year) : "", f.minutes ? f.minutes + " Min." : ""].filter(Boolean).join(" · ");
+      const line = el("div", { className: "facts" }, facts);
+      if (f.until) {
+        const left = (f.until - now) / 86400;
+        const until = el("span", { className: left < 3 ? "soon" : "" }, (facts ? " · " : "") + (left < 0 ? "nicht mehr verfügbar" : "⏳ bis " + dateText(f.until)));
+        line.append(until);
+      }
+      li.append(line);
+      const links = el("div", { className: "links" });
+      links.append(el("a", { className: "btn primary", href: "mediathek-extractor://suche?q=" + encodeURIComponent(f.title) }, "In der App öffnen"));
+      if (allowed(f.page)) links.append(el("a", { className: "btn", href: senderSearch(f.page, f.title), rel: "noopener" }, "Beim Sender ansehen"));
+      li.append(links);
+      list.append(li);
+    }
+  })();
+</script>
+</body>
+</html>
