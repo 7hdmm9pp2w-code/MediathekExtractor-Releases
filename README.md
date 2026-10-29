@@ -36,6 +36,13 @@ wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
 Neue Versionen kommen, wenn es gute neue Ideen gibt oder Fehler gemeldet werden. Fehlerbehebungen
 spielt die App von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
 
+### 1.6.0
+
+- **Filmtipps als eine Liste teilen:** Mehrere Filme gehen als nummerierte Liste mit einem einzigen Link raus. Der Link öffnet eine Seite mit allen Filmen; wer die App hat, übernimmt alle mit einem Klick und holt sie mit „★ Alle merken“ in die eigene Merkliste. Die Liste steckt nur im Link, gespeichert wird nichts.
+- **Vorschau beim Teilen:** eigener Satz („Für den Filmabend …“), wahlweise je Film ein Link und das Ablaufdatum; bald Ablaufendes steht oben, Folgen einer Staffel in einer Zeile.
+- **Problem melden… / Idee vorschlagen…** direkt aus der App – Version ist schon eingetragen.
+- **Sparsamer mit Daten:** Schalter „Filminfos nachschlagen“ (aus: keine Filmtitel an TMDB oder Wikidata); verfolgte Serien fragen nur noch Neues ab; Protokoll wird nach 14 Tagen bereinigt.
+
 ### 1.5.2
 
 - **Filminfos schneller und nach und nach:** Bewertung, Jahr und Genre erscheinen zuerst für die Filme, die gerade zu sehen sind, und dann laufend für den Rest – statt alle auf einmal nach bis zu einer Minute.
@@ -50,16 +57,6 @@ spielt die App von selbst ein. Hier die letzten drei Versionen; ältere stehen b
 - **Ladebalken für Filminfos:** „Filminfos 37 / 120“ beim Nachschlagen von Bewertungen, Jahr und Genre; im Profi-Modus mit Quelle und Restzeit.
 - **Nach dem Teilen** endet die Auswahl, kurz erscheint „✓ 3 Filmtipps kopiert“.
 - **Download-Verlauf:** Die App merkt sich fertige Downloads ausführlicher – als Grundlage für spätere Empfehlungen. Nur auf deinem Rechner (siehe [Datenschutz](#datenschutz)).
-
-### 1.5.0
-
-- **Downloads anhalten und fortsetzen:** „⏸ Anhalten“ an jedem Download und „Alle anhalten“ über der Warteschlange. „▶ Fortsetzen“ lädt an der erreichten Stelle weiter – auch bei Streams und nach einem Neustart der App.
-- **Genaue Suche:** Begriffe in Anführungszeichen finden nur das ganze Wort – „"Eis"“ findet das Eis, aber nicht mehr „Reise“, „Kreis“ oder „Preis“.
-- **Mehr Originalfassungen bei der ARD:** Manche Originalversionen führt nur die ARD-Mediathek selbst (z. B. „Amerikanische Fiktion“). Die App findet sie jetzt auch – mit „+ OV“ und Deutsch + Original.
-- **Mehrere Filme teilen:** in der Merkliste Häkchen setzen, in anderen Listen mit ⌘/Strg-Klick auswählen, in der Warteschlange über „Teilen…“ – eine Nachricht mit allen Filmtipps und Links.
-- **Updates nebenbei:** Die App sieht auch während des Betriebs nach neuen Versionen und lädt sie im Hintergrund. Fehlerbehebungen kommen ohne Hinweisleiste beim nächsten Start.
-- **Tastatur:** ⌘/Strg+F springt ins Suchfeld, Menütaste oder Umschalt+F10 öffnen das Kontextmenü, Enter lädt herunter, Esc schließt Dialoge, ein Rahmen zeigt den Fokus. Für VoiceOver und die Windows-Sprachausgabe beschriftet.
-- **Homebrew:** auf dem Mac jetzt auch per `brew install --cask` (siehe [Releases](../../releases/latest)).
 
 Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 
