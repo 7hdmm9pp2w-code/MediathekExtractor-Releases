@@ -16,13 +16,15 @@ wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
 
 ## Was die App sonst noch kann
 
-- **Gezielt suchen:** Senderauswahl, „nur ab 60 Min.“, die besten Treffer zuerst, Begriffe in Anführungszeichen als ganzes Wort
+- **Gezielt suchen:** Senderauswahl, „nur ab 60 Min.“, die besten Treffer zuerst, Begriffe in Anführungszeichen als ganzes Wort; findet auch Regie und Darsteller in der Beschreibung
 - **(Auch mehrere) Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
 - **Kostenlose Filme finden** über kinogrid.com, mit „verfügbar bis“, und **Empfehlungen** von filmdienst.de
 - **Vorschau** direkt in der App
 - **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache; auf Wunsch als SRT-Datei
 - **Nur Ton** als MP3 oder M4A
 - **Robuste Downloads:** automatisches Fortsetzen nach Verbindungsabbrüchen, Größe und freier Speicherplatz vorab, „✓ geladen“ an allem, was schon da ist
+- **Einstellungen an einem Ort:** nach Bereichen sortiert, jede Option kurz erklärt – über ⚙ oder ⌘, (Windows/Linux: Strg+,)
+- **Merkliste schnell aufräumen:** ⌫/Entf, ✕ oder Rechtsklick, ohne Rückfrage – ⌘Z bzw. Strg+Z holt Entferntes zurück
 - **Einfach- und Profi-Modus** (Profi mit Protokoll aller Aktionen)
 - **Mehrfachauswahl und Sortieren** der Trefferliste
 - **Beschreibung nachladen** vom Sender oder aus der Wikipedia
@@ -36,27 +38,24 @@ wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
 Neue Versionen kommen, wenn es gute neue Ideen gibt oder Fehler gemeldet werden. Fehlerbehebungen
 spielt die App von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
 
+### 1.7.1
+
+- **Merkliste leichter aufräumen:** Einträge mit ⌫ oder Entf entfernen (auch mehrere angehakte auf einmal), per ✕ beim Darüberfahren oder per Rechtsklick. Keine Rückfrage – „Rückgängig“ bzw. ⌘Z (Windows: Strg+Z) holt Entferntes zurück, auch mehrere Schritte.
+- **Filme bleiben erkennbar:** Mit „Infos in die Datei“ steht auch die Mediathek-Adresse in der MP4 – so erkennt die App einen Film später wieder, auch wenn er umbenannt oder verschoben wurde.
+
+### 1.7.0
+
+- **Einstellungen in einem eigenen Fenster:** nach Bereichen sortiert (Download, Dateien, Untertitel, Quellen & Daten, Ansicht), jede Option kurz erklärt – über ⚙ oben rechts, ⌘, (Windows/Linux: Strg+,) oder auf dem Mac im App-Menü.
+- **Suche findet auch Regisseure und Darsteller:** „Werner Herzog“ findet jetzt auch Filme, in deren Titel der Name nicht steht. Treffer im Titel stehen weiter vorn.
+- **Rechtsklick-Menü in der Trefferliste repariert:** „Herunterladen“ und „URL kopieren“ funktionieren wieder.
+- **ARTE-Originalfassungen laden zuverlässiger:** Verweigert ARTE die Seite, lädt die App die Datei aus der Mediathek.
+
 ### 1.6.0
 
 - **Filmtipps als eine Liste teilen:** Mehrere Filme gehen als nummerierte Liste mit einem einzigen Link raus. Der Link öffnet eine Seite mit allen Filmen; wer die App hat, übernimmt alle mit einem Klick und holt sie mit „★ Alle merken“ in die eigene Merkliste. Die Liste steckt nur im Link, gespeichert wird nichts.
 - **Vorschau beim Teilen:** eigener Satz („Für den Filmabend …“), wahlweise je Film ein Link und das Ablaufdatum; bald Ablaufendes steht oben, Folgen einer Staffel in einer Zeile.
 - **Problem melden… / Idee vorschlagen…** direkt aus der App – Version ist schon eingetragen.
 - **Sparsamer mit Daten:** Schalter „Filminfos nachschlagen“ (aus: keine Filmtitel an TMDB oder Wikidata); verfolgte Serien fragen nur noch Neues ab; Protokoll wird nach 14 Tagen bereinigt.
-
-### 1.5.2
-
-- **Filminfos schneller und nach und nach:** Bewertung, Jahr und Genre erscheinen zuerst für die Filme, die gerade zu sehen sind, und dann laufend für den Rest – statt alle auf einmal nach bis zu einer Minute.
-- **Suche ohne Hänger:** Große Suchen laden ihre Seiten gleichzeitig; antwortet eine Seite nicht, fragt die App nach 12 Sekunden noch einmal. Originalfassungen aus der ARD-Mediathek kommen im Hintergrund dazu.
-- **„🔔 Benachrichtigen, wenn es kommt“:** Findet die Suche nichts, lässt sie sich gleich merken. Taucht der Film später auf, meldet sich die App.
-- **Zur Bewertung durchklicken:** In der Detailansicht führt „bei TMDB“ zur Filmseite.
-- **Update bereit:** Liegt eine neue Version bereit, zeigt die App das jetzt auch bei Fehlerbehebungen – mit „Jetzt neu starten“.
-
-### 1.5.1
-
-- **Bessere Treffer-Reihenfolge:** Oben steht, was am besten passt – Titel genau wie gesucht vor Treffern im Thema oder als Wortteil, Spielfilme vor Clips, Hauptfassungen vor Audiodeskription. Beispiel „transit“: Der Kinofilm steht jetzt auf Platz 1 statt auf Platz 39.
-- **Ladebalken für Filminfos:** „Filminfos 37 / 120“ beim Nachschlagen von Bewertungen, Jahr und Genre; im Profi-Modus mit Quelle und Restzeit.
-- **Nach dem Teilen** endet die Auswahl, kurz erscheint „✓ 3 Filmtipps kopiert“.
-- **Download-Verlauf:** Die App merkt sich fertige Downloads ausführlicher – als Grundlage für spätere Empfehlungen. Nur auf deinem Rechner (siehe [Datenschutz](#datenschutz)).
 
 Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
 
