@@ -1,95 +1,64 @@
-# Mediathek-Extractor – Entdecken. Laden. Teilen.
+# Mediathek Plus
 
-Gute Filme in den Mediatheken entdecken, bevor sie verschwinden, mit einem Klick laden und als Tipp verschicken – für Mac, Windows und Linux.
+**Entdecken. Laden. Teilen.** Filme und Serien aus ARD, ZDF, ARTE, 3sat … finden, bevor sie verschwinden – für Mac, Windows und Linux.
 
-**Download:** [neueste Version](../../releases/latest) – dort steht auch, welche Datei für welches System ist,
-wie die Installation mit Homebrew geht und was beim ersten Start zu tun ist.
+**[⬇ Neueste Version herunterladen](../../releases/latest)** · kostenlos · ohne Konto · ohne Werbung
 
-## Worauf wir stolz sind
+*Früher „Mediathek-Extractor“: einfach drüber installieren – Merkliste, Verlauf und Einstellungen bleiben.*
 
-1. **Deutsch und Original in einer Datei.** Die App findet zum Film die Originalfassung – auch die, die nur die ARD-Mediathek selbst führt – und packt beide Tonspuren samt Untertiteln in eine einzige MP4.
-2. **Die Merkliste nimmt auf.** Filme, Serien und ganze Suchen („Regie: Wim Wenders“, oder ein Film, der noch nirgends läuft) verfolgen: Taucht etwas auf, meldet sich die App und lädt es auf Wunsch von selbst. „⏳ noch 2 Tage“ zeigt, was bald verschwindet.
-3. **Ein Filmkatalog statt nackter Titel.** Bewertung (TMDB), Jahr, Genre, Regie, Besetzung und Plakat; filtern nach „★ ab 7“, Genre oder Jahrzehnt; alle Filme einer Schauspielerin in den Mediatheken; jeden Tag ein Film des Tages.
-4. **Downloads, die einfach funktionieren.** Eine Suche über alle öffentlich-rechtlichen Sender; Anhalten und Fortsetzen auch nach einem Neustart; „Staffel laden“; „Später starten“ für die Nacht. yt-dlp, FFmpeg und die App selbst halten sich von allein aktuell.
-5. **Fertig für Plex, Jellyfin und Kodi.** Dateinamen nach eigener Vorlage mit Jahr und Staffel/Folge, dazu .nfo-Datei und Plakat – der Film landet gleich richtig einsortiert in der Mediathek zu Hause.
-6. **Bonus: Filmtipps teilen.** Einen oder viele Filme als übersichtliche Liste mit einem einzigen Link – als Nachricht, per E-Mail oder über das System. Der Link zeigt alle Filme; mit der App übernimmt man sie mit einem Klick.
+## Was die App kann
 
-## Was die App sonst noch kann
+| | |
+|---|---|
+| ✨ **Für dich** | Jeden Tag ein Film des Tages und Vorschläge nach deinem Geschmack – mit Begründung („Regie wie bei …“), berechnet auf deinem Rechner |
+| 🔎 **Suchen** | Alle öffentlich-rechtlichen Mediatheken auf einmal – mit Plakat, Bewertung, Genre, Regie und Besetzung |
+| ★ **Merkliste** | Filme, Serien und ganze Suchen verfolgen. Taucht etwas auf, meldet sich die App und lädt es auf Wunsch selbst |
+| ⬇ **Laden** | Deutsch und Original in einer Datei, Untertitel als Spur, fertig benannt für Plex, Jellyfin und Kodi |
+| 📚 **Bibliothek** | Alles Geladene an einem Ort – abspielen, im Ordner zeigen, weiterempfehlen |
+| 📤 **Teilen** | Filmtipps als Liste mit einem einzigen Link – wer die App hat, übernimmt alle mit einem Klick |
+| 🗄 **NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr – [Anleitung](NAS.md) |
 
-- **Gezielt suchen:** Senderauswahl, „nur ab 60 Min.“, die besten Treffer zuerst, Begriffe in Anführungszeichen als ganzes Wort; findet auch Regie und Darsteller in der Beschreibung
-- **(Auch mehrere) Videos aus Seiten auslesen:** einfach die URL einer Video- oder Übersichtsseite einfügen
-- **Kostenlose Filme finden** über kinogrid.com, mit „verfügbar bis“, und **Empfehlungen** von filmdienst.de
-- **Vorschau** direkt in der App
-- **Untertitel als Spur** statt eingebrannt – bei ARTE auch in der Originalsprache; auf Wunsch als SRT-Datei
-- **Nur Ton** als MP3 oder M4A
-- **Robuste Downloads:** automatisches Fortsetzen nach Verbindungsabbrüchen, Größe und freier Speicherplatz vorab, „✓ geladen“ an allem, was schon da ist
-- **Einstellungen an einem Ort:** nach Bereichen sortiert, jede Option kurz erklärt – über ⚙ oder ⌘, (Windows/Linux: Strg+,)
-- **Merkliste schnell aufräumen:** ⌫/Entf, ✕ oder Rechtsklick, ohne Rückfrage – ⌘Z bzw. Strg+Z holt Entferntes zurück
-- **Einfach- und Profi-Modus** (Profi mit Protokoll aller Aktionen)
-- **Mehrfachauswahl und Sortieren** der Trefferliste
-- **Beschreibung nachladen** vom Sender oder aus der Wikipedia
-- **Bedienung mit der Tastatur** (⌘/Strg+F, Pfeiltasten, Kontextmenü per Taste) und für VoiceOver/Sprachausgabe
-- **Einrichtung beim ersten Start** – yt-dlp lädt die App auf Wunsch selbst (unter Windows auch FFmpeg), auf dem Mac zeigt sie den passenden Homebrew-Befehl
-- **Windows portabel** ohne Installation, z. B. vom USB-Stick
-- **App weiterempfehlen** aus dem Über-Fenster
+## Neu in 2.0
 
-## Versionen
+- **Neues Gesicht:** Seitenleiste mit *Entdecken* und *Meine Filme*, Filme als Poster oder Tabelle (⌘1/⌘2). Das bisherige Layout gibt es weiter: Einstellungen → Ansicht → User Interface.
+- **Passend zu dir:** Vorschläge aus deinen Downloads und deiner Merkliste, mit Begründung. ✕ = nicht interessiert.
+- **Bibliothek** für alles, was du geladen hast.
+- **NAS-Fassung** und Fernsteuerung aus der Desktop-App – [so geht's](NAS.md).
+- **Neuer Name, neues Symbol.**
 
-Neue Versionen kommen, wenn es gute neue Ideen gibt oder Fehler gemeldet werden. Fehlerbehebungen
-spielt die App von selbst ein. Hier die letzten drei Versionen; ältere stehen bei den [Releases](../../releases).
+Alle Änderungen: [Releases](../../releases)
 
-### 1.7.1
+## Installation
 
-- **Merkliste leichter aufräumen:** Einträge mit ⌫ oder Entf entfernen (auch mehrere angehakte auf einmal), per ✕ beim Darüberfahren oder per Rechtsklick. Keine Rückfrage – „Rückgängig“ bzw. ⌘Z (Windows: Strg+Z) holt Entferntes zurück, auch mehrere Schritte.
-- **Filme bleiben erkennbar:** Mit „Infos in die Datei“ steht auch die Mediathek-Adresse in der MP4 – so erkennt die App einen Film später wieder, auch wenn er umbenannt oder verschoben wurde.
+| System | Datei |
+|---|---|
+| Mac | `…-macOS.dmg` – oder `brew tap 7hdmm9pp2w-code/tap && brew trust 7hdmm9pp2w-code/tap && brew install --cask mediathek-extractor` |
+| Windows | `…-Windows-Installer.exe` (ARM: `…-ARM-Installer.exe`), ohne Installation: `…-portabel.zip` |
+| Linux | `…-Linux.AppImage` oder `…-Linux-Debian-Ubuntu.deb` |
 
-### 1.7.0
+Die Installer sind nicht signiert – was beim ersten Start zu tun ist, steht beim [Download](../../releases/latest). Danach aktualisiert sich die App von selbst.
 
-- **Einstellungen in einem eigenen Fenster:** nach Bereichen sortiert (Download, Dateien, Untertitel, Quellen & Daten, Ansicht), jede Option kurz erklärt – über ⚙ oben rechts, ⌘, (Windows/Linux: Strg+,) oder auf dem Mac im App-Menü.
-- **Suche findet auch Regisseure und Darsteller:** „Werner Herzog“ findet jetzt auch Filme, in deren Titel der Name nicht steht. Treffer im Titel stehen weiter vorn.
-- **Rechtsklick-Menü in der Trefferliste repariert:** „Herunterladen“ und „URL kopieren“ funktionieren wieder.
-- **ARTE-Originalfassungen laden zuverlässiger:** Verweigert ARTE die Seite, lädt die App die Datei aus der Mediathek.
+## Fehler oder Idee?
 
-### 1.6.0
-
-- **Filmtipps als eine Liste teilen:** Mehrere Filme gehen als nummerierte Liste mit einem einzigen Link raus. Der Link öffnet eine Seite mit allen Filmen; wer die App hat, übernimmt alle mit einem Klick und holt sie mit „★ Alle merken“ in die eigene Merkliste. Die Liste steckt nur im Link, gespeichert wird nichts.
-- **Vorschau beim Teilen:** eigener Satz („Für den Filmabend …“), wahlweise je Film ein Link und das Ablaufdatum; bald Ablaufendes steht oben, Folgen einer Staffel in einer Zeile.
-- **Problem melden… / Idee vorschlagen…** direkt aus der App – Version ist schon eingetragen.
-- **Sparsamer mit Daten:** Schalter „Filminfos nachschlagen“ (aus: keine Filmtitel an TMDB oder Wikidata); verfolgte Serien fragen nur noch Neues ab; Protokoll wird nach 14 Tagen bereinigt.
-
-Linux bleibt vorerst auf 1.2.2 – die Linux-Fassung folgt Anfang November.
-
-## Fehler gefunden? Idee?
-
-Gern melden – unter [Issues → New issue](../../issues/new/choose) gibt es dafür zwei kurze Formulare:
-**Fehler melden** (mit Version, System und was passiert ist) und **Idee vorschlagen**.
-Dafür braucht man ein kostenloses GitHub-Konto. Meldungen dort sind öffentlich – bitte keine persönlichen Daten eintragen.
-
-## Danksagung und verwendete Projekte
-
-Der Mediathek-Extractor ist eine Oberfläche, die auf hervorragender freier Software und offenen Daten aufbaut:
-
-- **[yt-dlp](https://github.com/yt-dlp/yt-dlp)** – lädt Streams, Video-Seiten und MP3. Ohne yt-dlp ginge vieles nicht. Die App liefert yt-dlp nicht mit, sondern nutzt eine vorhandene Installation oder lädt auf Wunsch die offizielle Version.
-- **[FFmpeg](https://ffmpeg.org)** – fügt Bild und Tonspuren zusammen, wandelt in MP3 um. Ebenfalls nicht mitgeliefert; unter Windows auf Wunsch aus den [yt-dlp-FFmpeg-Builds](https://github.com/yt-dlp/FFmpeg-Builds).
-- **[MediathekViewWeb](https://mediathekviewweb.de)** und das Projekt **[MediathekView](https://mediathekview.de)** – die Datenbasis der Mediathek-Suche. Wer die App nützlich findet, kann MediathekView [unterstützen](https://mediathekview.de/spenden/).
-- **[kinogrid.com](https://kinogrid.com)** – Verzeichnis kostenloser Filme.
-- **[TMDB](https://www.themoviedb.org)** – Filminfos (Jahr, Genre, Regie, Besetzung) und Personensuche. *This product uses the TMDB API but is not endorsed or certified by TMDB.*
-- **[Wikidata](https://www.wikidata.org)** (CC0) und **[Wikipedia](https://de.wikipedia.org)** (CC BY-SA) – Filminfos, wo TMDB nichts kennt, und Beschreibungen, wenn der Sender keine liefert.
-- **[Tauri](https://tauri.app)** (MIT/Apache-2.0), **[hls.js](https://github.com/video-dev/hls.js)** (Apache-2.0) und **[Noto Emoji](https://github.com/googlefonts/noto-emoji)** (Apache-2.0, App-Icon).
-
-Alle genannten Projekte sind unabhängig und nicht für diese App verantwortlich.
-
-Und danke an Haiko, Marko, Johannes und Jan fürs Testen und für viele Anregungen.
+[Issues → New issue](../../issues/new/choose): **Fehler melden** oder **Idee vorschlagen** (kostenloses GitHub-Konto nötig, Meldungen sind öffentlich). Oder direkt in der App: Über → Problem melden…
 
 ## Datenschutz
 
-Die App hat keinen eigenen Server, kein Konto und keine Analyse. Merkliste, Download-Verlauf, Statistik und
-Einstellungen liegen nur auf deinem Rechner. Für Suche, Filminfos und Downloads fragt die App direkt bei den
-genannten Diensten an (MediathekViewWeb, TMDB, Wikidata/Wikipedia, ARD-API, kinogrid, filmdienst, Server der
-Sender); diese sehen dabei deine IP-Adresse und den Suchbegriff bzw. Filmtitel. Nach Updates fragt die App bei GitHub.
+Kein Server, kein Konto, keine Analyse. Merkliste, Verlauf, Vorschläge und Einstellungen bleiben auf deinem Rechner (bzw. deinem NAS). Für Suche, Filminfos und Downloads fragt die App direkt bei den unten genannten Diensten und den Sendern an; diese sehen dabei deine IP-Adresse und den Suchbegriff bzw. Filmtitel.
 
-## Hinweise
+Bitte nur für Inhalte nutzen, die du privat speichern darfst. Kopiergeschützte Inhalte lädt die App nicht. Kein Angebot von ARD, ZDF oder anderen Sendern.
 
-- Bitte nur für Inhalte nutzen, die du privat speichern darfst. Kopiergeschützte Inhalte lädt die App nicht.
+## Danke
+
+Mediathek Plus baut auf freier Software und offenen Daten auf:
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) und [FFmpeg](https://ffmpeg.org) (nicht mitgeliefert, die App nutzt vorhandene oder lädt die offiziellen Versionen) ·
+[MediathekViewWeb](https://mediathekviewweb.de) / [MediathekView](https://mediathekview.de) ([unterstützen](https://mediathekview.de/spenden/)) ·
+[kinogrid.com](https://kinogrid.com) · [filmdienst.de](https://www.filmdienst.de) ·
+[TMDB](https://www.themoviedb.org) · [Wikidata](https://www.wikidata.org) (CC0) und [Wikipedia](https://de.wikipedia.org) (CC BY-SA) ·
+[Tauri](https://tauri.app) (MIT/Apache-2.0) · [hls.js](https://github.com/video-dev/hls.js) (Apache-2.0).
+Alle sind unabhängig und nicht für diese App verantwortlich.
+*This product uses the TMDB API but is not endorsed or certified by TMDB.*
+
+Danke an Haiko, Marko, Johannes und Jan fürs Testen und viele Anregungen.
 
 Dieses Repository enthält nur die Installer; der Quellcode ist nicht öffentlich.
