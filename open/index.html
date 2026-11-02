@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Mediathek-Extractor – Link öffnen</title>
+<title>Mediathek Plus – Link öffnen</title>
 <!-- Link-Seite für geteilte Filme: öffnet die App („mediathek-extractor://…“) bzw. zeigt ohne App
      die Sender-Seite und den Download. Keine externen Dateien, kein Tracking. -->
 <style>
@@ -28,11 +28,11 @@
 <main>
   <div class="logo">📺</div>
   <h1 id="title">Filmtipp</h1>
-  <p id="hint">Wird in Mediathek-Extractor geöffnet …</p>
-  <a class="btn primary" id="app" href="#">In Mediathek-Extractor öffnen</a>
+  <p id="hint">Wird in Mediathek Plus geöffnet …</p>
+  <a class="btn primary" id="app" href="#">In Mediathek Plus öffnen</a>
   <a class="btn" id="sender" href="#" hidden>Beim Sender ansehen</a>
-  <a class="btn" id="download" href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases">Mediathek-Extractor herunterladen</a>
-  <small>Mediathek-Extractor sucht und lädt Filme aus den Mediatheken von ARD, ZDF, ARTE, 3sat … – kostenlos für Mac, Windows und Linux.</small>
+  <a class="btn" id="download" href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases">Mediathek Plus herunterladen</a>
+  <small>Mediathek Plus sucht und lädt Filme aus den Mediatheken von ARD, ZDF, ARTE, 3sat … – kostenlos für Mac, Windows und Linux.</small>
 </main>
 <script>
   // Gleiche Liste wie in der App (src/lib/links.ts): nur Seiten der Sender
@@ -52,7 +52,7 @@
   const title = (params.get("t") || "").slice(0, 200);
   if (title) {
     document.getElementById("title").textContent = title;
-    document.title = title + " – Mediathek-Extractor";
+    document.title = title + " – Mediathek Plus";
   }
   // In der App per Titel suchen – zuverlässiger als die Sender-Seite: deren Adresse in den
   // Mediathek-Daten ist manchmal veraltet (ARD: 404), der Film selbst aber noch da
@@ -87,7 +87,7 @@
     // Direkt versuchen; der Browser fragt meist nach, ob die App geöffnet werden darf
     location.href = appUrl;
     setTimeout(() => {
-      document.getElementById("hint").textContent = "Nichts passiert? Dann ist Mediathek-Extractor hier nicht installiert – oder öffne den Film direkt beim Sender.";
+      document.getElementById("hint").textContent = "Nichts passiert? Dann ist Mediathek Plus hier nicht installiert – oder öffne den Film direkt beim Sender.";
     }, 1500);
   } else {
     app.hidden = true;

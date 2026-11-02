@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Filmtipps – Mediathek-Extractor</title>
+<title>Filmtipps – Mediathek Plus</title>
 <!-- Listenseite für geteilte Filmtipps: Die Liste steht komprimiert im Fragment des Links
      (#z… bzw. #j…, Format wie src/lib/shareList.ts) – das Fragment geht nicht an den Server.
      Keine externen Dateien, kein Tracking. -->
@@ -39,11 +39,11 @@
     <div class="logo">📺</div>
     <h1 id="title">Filmtipps</h1>
     <p id="hint">Filme aus den Mediatheken von ARD, ZDF, ARTE &amp; Co.</p>
-    <a class="btn primary" id="all" href="#" hidden>Alle in Mediathek-Extractor übernehmen</a>
-    <a class="btn" href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases">Mediathek-Extractor herunterladen</a>
+    <a class="btn primary" id="all" href="#" hidden>Alle in Mediathek Plus übernehmen</a>
+    <a class="btn" href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases">Mediathek Plus herunterladen</a>
   </header>
   <ol id="list"></ol>
-  <small>Mediathek-Extractor sucht und lädt Filme aus den Mediatheken von ARD, ZDF, ARTE, 3sat … – kostenlos für Mac, Windows und Linux. Die Liste steckt nur im Link; gespeichert wird nichts.</small>
+  <small>Mediathek Plus sucht und lädt Filme aus den Mediatheken von ARD, ZDF, ARTE, 3sat … – kostenlos für Mac, Windows und Linux. Die Liste steckt nur im Link; gespeichert wird nichts.</small>
 </main>
 <script>
   // Gleiche Liste wie in der App (src/lib/links.ts): nur Seiten der Sender
@@ -103,8 +103,8 @@
     }
     const n = films.length;
     document.getElementById("title").textContent = n === 1 ? "1 Filmtipp" : n + " Filmtipps";
-    document.title = (n === 1 ? "1 Filmtipp" : n + " Filmtipps") + " – Mediathek-Extractor";
-    document.getElementById("hint").textContent = "Mit Mediathek-Extractor alle auf einmal übernehmen und laden – oder einzeln beim Sender ansehen.";
+    document.title = (n === 1 ? "1 Filmtipp" : n + " Filmtipps") + " – Mediathek Plus";
+    document.getElementById("hint").textContent = "Mit Mediathek Plus alle auf einmal übernehmen und laden – oder einzeln beim Sender ansehen.";
     const all = document.getElementById("all");
     all.href = "mediathek-extractor://liste?d=" + encodeURIComponent(data);
     all.hidden = false;
