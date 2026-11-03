@@ -4,6 +4,13 @@
 
 **[⬇ Neueste Version herunterladen](../../releases/latest)** · kostenlos · ohne Konto · ohne Werbung
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="bilder/fuer-dich-dunkel.png">
+  <img src="bilder/fuer-dich-hell.png" alt="Mediathek Plus: „Für dich“ mit Empfehlungen von filmdienst.de und den Mediathekperlen, rechts die Detailansicht eines Films">
+</picture>
+
+<sub>Filmbilder für den Screenshot weichgezeichnet – in der App sind sie scharf.</sub>
+
 *Früher „Mediathek-Extractor“: einfach drüber installieren – Merkliste, Verlauf und Einstellungen bleiben.*
 
 ## Was die App kann
