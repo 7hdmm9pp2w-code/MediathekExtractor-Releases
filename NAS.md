@@ -4,12 +4,15 @@ Die NAS-Fassung lädt rund um die Uhr – auch wenn dein Rechner aus ist. Bedien
 
 ## Einrichten auf der Synology (Container Manager)
 
+**Am einfachsten mit dem [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/):** Freigaben für Filme, Serien und Dokus eintragen, `docker-compose.yml` herunterladen und in Schritt 3 als Quelle „docker-compose.yml hochladen“ wählen – dann entfällt Schritt 4.
+
 1. **Paket-Zentrum:** „Container Manager“ installieren (DSM 7.2 oder neuer).
 2. **File Station:** den Ordner `docker/mediathek-plus` anlegen.
 3. **Container Manager → Projekt → Erstellen:** Name `mediathek-plus`, Pfad `docker/mediathek-plus`, Quelle „docker-compose.yml erstellen“ – den Text unten einfügen.
 4. **Drei Stellen anpassen:**
    - `MX_PASSWORD` – dein Passwort
    - `volumes` und `MX_DOWNLOADS` – die Freigabe für die Filme, **genau so geschrieben wie in der File Station** (`Video` ≠ `video`)
+   - Serien oder Dokus in eigenen Freigaben? Je Freigabe einen weiteren Block unter `volumes` und `MX_SERIES` bzw. `MX_DOKUS` (siehe [Filme, Serien, Dokus getrennt](#filme-serien-dokus-getrennt))
    - `PUID` / `PGID` – nur falls dein Benutzer nicht 1026 / 100 ist (per SSH: `id`)
 5. **Weiter → Fertig.** Dann im Browser `http://<NAS-Adresse>:8080` öffnen und anmelden.
 
@@ -41,9 +44,34 @@ services:
         bind: { create_host_path: false }
 ```
 
+## Filme, Serien, Dokus getrennt
+
+Liegen Serien und Dokus auf dem NAS in eigenen Freigaben (z. B. `Video`, `Serien`, `Doku` – wie die Bibliotheken in Plex oder Jellyfin), legt die App jede Art dort ab: Serienfolgen in „Serie/Staffel 01“, Dokus erkennt sie an Genre und Sendereihe (Terra X, 37 Grad …). In der Detailansicht lässt sich die Art vor dem Laden ändern. In der yml dazu:
+
+```yaml
+    environment:
+      MX_DOWNLOADS: /volume1/Video
+      MX_SERIES: /volume1/Serien
+      MX_DOKUS: /volume1/Doku
+    volumes:
+      # … wie oben, dazu je Freigabe ein Block:
+      - type: bind
+        source: /volume1/Serien
+        target: /volume1/Serien
+        bind: { create_host_path: false }
+      - type: bind
+        source: /volume1/Doku
+        target: /volume1/Doku
+        bind: { create_host_path: false }
+```
+
+Ohne `MX_SERIES`/`MX_DOKUS` landet alles im Filmordner wie bisher; ändern lässt es sich jederzeit im Browser unter Einstellungen → Download.
+
 ## Per Kommandozeile
 
 Für jedes NAS oder jeden Linux-Server mit Docker. Auf der Synology vorher SSH einschalten (Systemsteuerung → Terminal & SNMP) und sich mit `ssh <benutzer>@<NAS-Adresse>` anmelden.
+
+Am einfachsten: Der [Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/) zeigt unter „Oder per SSH“ die fertigen Befehle samt yml zum Einfügen. Von Hand geht es so:
 
 ```bash
 # 1. Eigene Kennung ansehen – uid und gid gehören in PUID/PGID
@@ -80,7 +108,7 @@ In der App unter **Einstellungen → NAS** Adresse (z. B. `diskstation.local:808
 ## Gut zu wissen
 
 - **Nur im Heimnetz.** Den Port nicht im Router freigeben – von unterwegs über VPN oder Tailscale.
-- **Weitere Freigaben:** einen zweiten Block unter `volumes` ergänzen (wieder links und rechts derselbe Pfad), Projekt neu erstellen. In der App dann unter Einstellungen → Ändern… wählen.
+- **Weitere Freigaben:** einen zweiten Block unter `volumes` ergänzen (wieder links und rechts derselbe Pfad) oder die yml im [Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/) neu erzeugen, Projekt neu erstellen. In der App dann unter Einstellungen → Ändern… wählen. Fehlt eine Freigabe, zeigt die App oben den passenden Block zum Kopieren.
 - **Hinweis oben in der App „Kein Schreibzugriff“?** Er nennt Benutzer, Gruppen und meist auch gleich die Lösung (z. B. „PGIDS: 101 eintragen“). Sonst in DSM unter Systemsteuerung → Freigegebener Ordner → Berechtigungen deinem Benutzer Schreibrechte geben.
 - **Startet nicht, „bind source path does not exist“:** Ein Pfad in `volumes` stimmt nicht – meist die Groß-/Kleinschreibung.
 - **Update:** Container Manager → Projekt → Aktion → Erstellen. Merkliste und Einstellungen bleiben.

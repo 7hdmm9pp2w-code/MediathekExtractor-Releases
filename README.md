@@ -17,21 +17,20 @@
 
 | Bereich | Was die App kann |
 |---|---|
-| ✨&nbsp;**Für dich** | Jeden Tag ein Film des Tages und Vorschläge nach deinem Geschmack – mit Begründung („Regie wie bei …“), berechnet auf deinem Rechner |
+| ✨&nbsp;**Für dich** | Jeden Tag ein Film des Tages und Vorschläge nach deinem Geschmack – mit Begründung („Regie wie bei …“), berechnet auf deinem Rechner; lernt auf Wunsch aus dem, was du in Jellyfin gesehen hast |
 | 🔎&nbsp;**Suchen** | Alle öffentlich-rechtlichen Mediatheken auf einmal – mit Plakat, Bewertung, Genre, Regie und Besetzung |
 | ★&nbsp;**Merkliste** | Filme, Serien und ganze Suchen verfolgen. Taucht etwas auf, meldet sich die App und lädt es auf Wunsch selbst |
-| ⬇&nbsp;**Laden** | Deutsch und Original in einer Datei, Untertitel als Spur, fertig benannt für Plex, Jellyfin und Kodi |
-| 📚&nbsp;**Bibliothek** | Alles Geladene an einem Ort – abspielen, im Ordner zeigen, weiterempfehlen |
+| ⬇&nbsp;**Laden** | Deutsch und Original in einer Datei, Untertitel als Spur, fertig benannt für Plex, Jellyfin und Kodi – Filme, Serien und Dokus auf Wunsch in eigene Ordner |
+| 📚&nbsp;**Bibliothek** | Alles Geladene an einem Ort – abspielen, im Ordner zeigen, weiterempfehlen. Mit Jellyfin oder Emby verbunden: auch alles von dort, mit „▶ In Jellyfin abspielen“ |
 | 📤&nbsp;**Teilen** | Filmtipps als Liste mit einem einzigen Link – wer die App hat, übernimmt alle mit einem Klick |
-| 🗄&nbsp;**NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr – [Anleitung](NAS.md) |
+| 🗄&nbsp;**NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr – einrichten mit dem [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/), [Anleitung](NAS.md) |
 
-## Neu in 2.0
+## Neu in 2.1
 
-- **Neues Gesicht:** Seitenleiste mit *Entdecken* und *Meine Filme*, Filme als Poster oder Tabelle (⌘1/⌘2). Das bisherige Layout gibt es weiter: Einstellungen → Ansicht → User Interface.
-- **Passend zu dir:** Vorschläge aus deinen Downloads und deiner Merkliste, mit Begründung. ✕ = nicht interessiert.
-- **Bibliothek** für alles, was du geladen hast.
-- **NAS-Fassung** und Fernsteuerung aus der Desktop-App – [so geht's](NAS.md).
-- **Neuer Name, neues Symbol.**
+- **Jellyfin und Emby:** Die App zeigt, was du schon hast und gesehen hast, die Bibliothek enthält auch alles vom Medienserver, und „Passend zu dir“ lernt aus deinen gesehenen Filmen und Favoriten.
+- **Filme, Serien, Dokus getrennt** – je ein Zielordner, auf Wunsch jeder Film in eigenem Ordner.
+- **Originalton immer dazu** als Einstellung, **Fehlgeschlagene wiederholen** in der Warteschlange.
+- **NAS in wenigen Minuten:** [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/) für Container Manager oder SSH.
 
 Alle Änderungen: [Releases](../../releases)
 
@@ -66,6 +65,6 @@ Mediathek Plus baut auf freier Software und offenen Daten auf:
 Alle sind unabhängig und nicht für diese App verantwortlich.
 *This product uses the TMDB API but is not endorsed or certified by TMDB.*
 
-Danke an Haiko, Marko, Johannes und Jan fürs Testen und viele Anregungen.
+Danke an Haiko, Marko, Johannes, Jan und Philipp fürs Testen und viele Anregungen.
 
 Dieses Repository enthält nur die Installer; der Quellcode ist nicht öffentlich.
