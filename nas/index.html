@@ -91,12 +91,23 @@
       Später eine Freigabe dazu? Hier neu erzeugen, im Projekt ersetzen, Projekt neu erstellen – Einstellungen und Merkliste bleiben.
     </small>
   </section>
+
+  <section>
+    <div class="row" style="justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 10px">
+      <h2 style="margin: 0">Oder per SSH</h2>
+      <button id="copy-ssh" type="button">Kopieren</button>
+    </div>
+    <p>SSH einschalten (Systemsteuerung → Terminal &amp; SNMP), mit <code>ssh benutzer@diskstation.local</code> anmelden und alles auf einmal einfügen – die yml steckt schon drin.</p>
+    <pre id="ssh"></pre>
+    <small>Update später im selben Ordner: <code>sudo docker compose pull &amp;&amp; sudo docker compose up -d</code></small>
+  </section>
 </main>
 <script>
   const $ = (id) => document.getElementById(id);
   const clean = (s) => s.trim().replace(/^\/+|\/+$/g, "");
-  // In doppelten Anführungszeichen ist alles erlaubt, nur \ und " müssen maskiert werden
-  const q = (s) => `"${s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+  // In doppelten Anführungszeichen ist alles erlaubt, nur \ und " müssen maskiert werden – und $ verdoppelt,
+  // sonst hält docker compose „$abc“ für eine Variable
+  const q = (s) => `"${s.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\$/g, "$$$$")}"`;
 
   function render() {
     const root = "/" + clean($("root").value || "volume1");
@@ -127,7 +138,7 @@
     lines.push(
       "    volumes:",
       "      - type: bind                        # Einstellungen, Merkliste, Protokoll",
-      `        source: ${root}/docker/mediathek-plus`,
+      `        source: ${q(`${root}/docker/mediathek-plus`)}`,
       "        target: /data",
       "        bind: { create_host_path: false }",
     );
@@ -140,7 +151,17 @@
         "        bind: { create_host_path: false }",
       );
     }
-    $("yml").textContent = lines.join("\n") + "\n";
+    const yml = lines.join("\n") + "\n";
+    $("yml").textContent = yml;
+    // Ordner und Datei als eigener Benutzer, nur docker braucht sudo; <<'EOF' lässt $ und Sonderzeichen im Passwort unangetastet
+    const dir = `'${root.replace(/'/g, "'\\''")}/docker/mediathek-plus'`;
+    $("ssh").textContent = [
+      `mkdir -p ${dir} && cd ${dir}`,
+      "cat > docker-compose.yml <<'EOF'",
+      yml + "EOF",
+      "sudo docker compose up -d",
+      "sudo docker compose logs --tail 20",
+    ].join("\n") + "\n";
   }
 
   $("random").onclick = () => {
@@ -161,11 +182,13 @@
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
-  $("copy").onclick = async () => {
-    await navigator.clipboard.writeText($("yml").textContent);
-    $("copy").textContent = "✓ Kopiert";
-    setTimeout(() => ($("copy").textContent = "Kopieren"), 1500);
-  };
+  const copy = (button, source) => (button.onclick = async () => {
+    await navigator.clipboard.writeText(source.textContent);
+    button.textContent = "✓ Kopiert";
+    setTimeout(() => (button.textContent = "Kopieren"), 1500);
+  });
+  copy($("copy"), $("yml"));
+  copy($("copy-ssh"), $("ssh"));
   document.querySelectorAll("input").forEach((i) => i.addEventListener("input", render));
   // Weitere Freigaben: je eine Zeile mit Name und ✕
   $("add").onclick = () => {
