@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAS einrichten – Mediathek Plus</title>
+<!-- yml-Baukasten für die NAS-Fassung: Freigaben eintragen, fertige docker-compose.yml kopieren.
+     Läuft nur im Browser – nichts wird gesendet oder gespeichert. Aufbau wie die Vorlage in NAS.md. -->
+<style>
+  :root { --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #5d6576; --accent: #3a5bd9; --border: #dfe3ea; --code: #f0f2f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #15171c; --card: #1f2229; --text: #e9ecf2; --muted: #a2a9b8; --accent: #7c97ff; --border: #343844; --code: #171a20; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 16px; }
+  main { max-width: 720px; margin: 0 auto; }
+  section { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; }
+  .logo { font-size: 32px; }
+  h1 { font-size: 20px; margin: 6px 0 4px; }
+  h2 { font-size: 16px; margin: 0 0 10px; }
+  p { color: var(--muted); margin: 4px 0 12px; }
+  .grid { display: grid; grid-template-columns: 7.5em 1fr 1fr; gap: 8px 10px; align-items: center; }
+  .grid .head { font-size: 13px; color: var(--muted); }
+  label { font-size: 15px; }
+  input { font: inherit; font-size: 15px; width: 100%; min-width: 0; padding: 7px 9px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+  .pair { display: grid; grid-template-columns: 7.5em 1fr; gap: 8px 10px; align-items: center; margin-top: 10px; }
+  .row { display: flex; gap: 8px; }
+  .row input { flex: 1; }
+  button { font: inherit; font-size: 14px; padding: 7px 12px; border-radius: 9px; border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; white-space: nowrap; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  pre { background: var(--code); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; overflow-x: auto; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0 0 10px; }
+  small, .note { display: block; color: var(--muted); font-size: 13px; }
+  .note { margin: 8px 0 0; }
+  a { color: var(--accent); }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+    .grid .kind { grid-column: 1 / -1; margin-top: 4px; font-weight: 600; }
+    .grid .head { display: none; }
+    .pair { grid-template-columns: 1fr; gap: 4px 10px; }
+    .pair label { margin-top: 6px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <div class="logo">🗄</div>
+    <h1>Mediathek Plus aufs NAS</h1>
+    <p>Trag ein, wo deine Filme, Serien und Dokus liegen – darunter steht die fertige <code>docker-compose.yml</code> für den Container Manager der Synology (oder <code>docker compose</code> auf jedem anderen NAS). Alles bleibt in deinem Browser, nichts wird gesendet. Schritt für Schritt: <a href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases/blob/main/NAS.md">Anleitung</a>.</p>
+  </section>
+
+  <section>
+    <h2>Wohin soll was?</h2>
+    <p>Die Freigabe genau so schreiben wie in der File Station (<code>Video</code> ≠ <code>video</code>). Unterordner dürfen leer bleiben; Serien landen darin in „Serie/Staffel 01“. Serien oder Dokus leer = zu den Filmen.</p>
+    <div class="grid">
+      <span class="head"></span><span class="head">Freigabe</span><span class="head">Unterordner (optional)</span>
+      <label class="kind" for="film-share">Filme</label><input id="film-share" value="Video" placeholder="z. B. Video"><input id="film-sub" placeholder="z. B. Mediathek">
+      <label class="kind" for="serie-share">Serien</label><input id="serie-share" value="" placeholder="z. B. Serien"><input id="serie-sub">
+      <label class="kind" for="doku-share">Dokus</label><input id="doku-share" value="" placeholder="z. B. Doku"><input id="doku-sub">
+    </div>
+    <div id="extra"></div>
+    <button id="add" type="button" style="margin-top: 10px">+ Weitere Freigabe</button>
+    <span class="note">Weitere Freigaben lassen sich später in der App unter Einstellungen → Download als Zielordner wählen, ohne die yml neu zu erzeugen.</span>
+  </section>
+
+  <section>
+    <h2>Zugang und NAS</h2>
+    <div class="pair">
+      <label for="password">Passwort</label>
+      <div class="row"><input id="password" placeholder="für die Anmeldung im Browser" autocomplete="new-password"><button id="random" type="button">Zufällig</button></div>
+      <label for="port">Port</label><input id="port" value="8080" inputmode="numeric">
+      <label for="root">Freigaben in</label><input id="root" value="/volume1">
+      <label for="puid">Benutzer</label>
+      <div class="row"><input id="puid" value="1026" inputmode="numeric" aria-label="PUID"><input id="pgid" value="100" inputmode="numeric" aria-label="PGID"></div>
+    </div>
+    <span class="note">Synology: Freigaben liegen meist in <code>/volume1</code>, dein Benutzer ist meist 1026 / 100 (per SSH: <code>id</code>). Andere NAS: Pfad und Kennung entsprechend.</span>
+  </section>
+
+  <section>
+    <div class="row" style="justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 10px">
+      <h2 style="margin: 0">docker-compose.yml</h2>
+      <div class="row">
+        <button id="copy" type="button">Kopieren</button>
+        <button id="save" class="primary" type="button">⬇ Herunterladen</button>
+      </div>
+    </div>
+    <pre id="yml"></pre>
+    <small>
+      Den Ordner <code>docker/mediathek-plus</code> in der File Station anlegen. Dann Container Manager → Projekt → Erstellen → Pfad <code>docker/mediathek-plus</code>
+      → Quelle „docker-compose.yml hochladen“ → die heruntergeladene Datei wählen. (Oder „docker-compose.yml erstellen“ und den kopierten Text einfügen.)
+      Später eine Freigabe dazu? Hier neu erzeugen, im Projekt ersetzen, Projekt neu erstellen – Einstellungen und Merkliste bleiben.
+    </small>
+  </section>
+</main>
+<script>
+  const $ = (id) => document.getElementById(id);
+  const clean = (s) => s.trim().replace(/^\/+|\/+$/g, "");
+  // In doppelten Anführungszeichen ist alles erlaubt, nur \ und " müssen maskiert werden
+  const q = (s) => `"${s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+
+  function render() {
+    const root = "/" + clean($("root").value || "volume1");
+    const kinds = ["film", "serie", "doku"].map((k) => ({ k, share: clean($(k + "-share").value), sub: clean($(k + "-sub").value) }));
+    const film = kinds[0].share ? kinds[0] : { share: "video", sub: "Mediathek" };
+    const path = (x) => [root, x.share, x.sub].filter(Boolean).join("/");
+    const extra = [...document.querySelectorAll("#extra input")].map((i) => clean(i.value)).filter(Boolean);
+    const shares = [...new Set([...[film, ...kinds.slice(1)].filter((x) => x.share).map((x) => x.share), ...extra])];
+    const password = $("password").value || "bitte-ändern";
+    const lines = [
+      "services:",
+      "  mediathek-plus:",
+      "    image: ghcr.io/7hdmm9pp2w-code/mediathek-plus:latest",
+      "    container_name: mediathek-plus",
+      "    restart: unless-stopped",
+      "    ports:",
+      `      - "${Number($("port").value) || 8080}:8080"`,
+      "    environment:",
+      `      MX_PASSWORD: ${q(password)}`,
+      "      TZ: Europe/Berlin",
+      `      PUID: ${Number($("puid").value) || 1026}`,
+      `      PGID: ${Number($("pgid").value) || 100}`,
+      "      PGIDS: 101                          # Gruppe administrators – hat auf Synology-Freigaben meist die Schreibrechte",
+      `      MX_DOWNLOADS: ${q(path(film))}`,
+    ];
+    if (kinds[1].share) lines.push(`      MX_SERIES: ${q(path(kinds[1]))}`);
+    if (kinds[2].share) lines.push(`      MX_DOKUS: ${q(path(kinds[2]))}`);
+    lines.push(
+      "    volumes:",
+      "      - type: bind                        # Einstellungen, Merkliste, Protokoll",
+      `        source: ${root}/docker/mediathek-plus`,
+      "        target: /data",
+      "        bind: { create_host_path: false }",
+    );
+    for (const share of shares) {
+      const p = q(`${root}/${share}`);
+      lines.push(
+        `      - type: bind                        # Freigabe ${share} – links und rechts derselbe Pfad`,
+        `        source: ${p}`,
+        `        target: ${p}`,
+        "        bind: { create_host_path: false }",
+      );
+    }
+    $("yml").textContent = lines.join("\n") + "\n";
+  }
+
+  $("random").onclick = () => {
+    // Gut lesbar, ohne verwechselbare Zeichen (0/O, 1/l/I)
+    const abc = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let out = "";
+    while (out.length < 20) {
+      // Nur Bytes unter einem Vielfachen von 56 – sonst kämen die ersten Zeichen öfter vor
+      for (const b of crypto.getRandomValues(new Uint8Array(32))) if (b < 224 && out.length < 20) out += abc[b % abc.length];
+    }
+    $("password").value = out;
+    render();
+  };
+  // Als Datei speichern – der Container Manager nimmt sie beim Erstellen des Projekts direkt an
+  $("save").onclick = () => {
+    const url = URL.createObjectURL(new Blob([$("yml").textContent], { type: "text/yaml" }));
+    const a = Object.assign(document.createElement("a"), { href: url, download: "docker-compose.yml" });
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+  $("copy").onclick = async () => {
+    await navigator.clipboard.writeText($("yml").textContent);
+    $("copy").textContent = "✓ Kopiert";
+    setTimeout(() => ($("copy").textContent = "Kopieren"), 1500);
+  };
+  document.querySelectorAll("input").forEach((i) => i.addEventListener("input", render));
+  // Weitere Freigaben: je eine Zeile mit Name und ✕
+  $("add").onclick = () => {
+    const row = Object.assign(document.createElement("div"), { className: "pair" });
+    const label = Object.assign(document.createElement("label"), { textContent: "Freigabe" });
+    const line = Object.assign(document.createElement("div"), { className: "row" });
+    const input = Object.assign(document.createElement("input"), { placeholder: "z. B. Kinder" });
+    const remove = Object.assign(document.createElement("button"), { type: "button", textContent: "✕", title: "Entfernen" });
+    input.addEventListener("input", render);
+    remove.onclick = () => (row.remove(), render());
+    line.append(input, remove);
+    row.append(label, line);
+    $("extra").append(row);
+    input.focus();
+  };
+  render();
+</script>
+</body>
+</html>
