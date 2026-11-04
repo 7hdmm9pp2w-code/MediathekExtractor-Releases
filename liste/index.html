@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<link rel="icon" href="../icon.png">
 <title>Filmtipps – Mediathek Plus</title>
 <!-- Listenseite für geteilte Filmtipps: Die Liste steht komprimiert im Fragment des Links
      (#z… bzw. #j…, Format wie src/lib/shareList.ts) – das Fragment geht nicht an den Server.
@@ -17,7 +18,7 @@
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 16px; }
   main { max-width: 640px; margin: 0 auto; }
   header { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 12px; }
-  .logo { font-size: 32px; }
+  .logo { width: 56px; height: 56px; border-radius: 12px; }
   h1 { font-size: 20px; margin: 6px 0 4px; }
   p { color: var(--muted); margin: 4px 0 12px; }
   ol { list-style: none; padding: 0; margin: 0; }
@@ -36,11 +37,11 @@
 <body>
 <main>
   <header>
-    <div class="logo">📺</div>
+    <img class="logo" src="../icon.png" alt="Mediathek Plus">
     <h1 id="title">Filmtipps</h1>
     <p id="hint">Filme aus den Mediatheken von ARD, ZDF, ARTE &amp; Co.</p>
     <a class="btn primary" id="all" href="#" hidden>Alle in Mediathek Plus übernehmen</a>
-    <a class="btn" href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases">Mediathek Plus herunterladen</a>
+    <a class="btn" href="https://github.com/7hdmm9pp2w-code/Mediathek-Plus">Mediathek Plus herunterladen</a>
   </header>
   <ol id="list"></ol>
   <small>Mediathek Plus sucht und lädt Filme aus den Mediatheken von ARD, ZDF, ARTE, 3sat … – kostenlos für Mac, Windows und Linux. Die Liste steckt nur im Link; gespeichert wird nichts.</small>
