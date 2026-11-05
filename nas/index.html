@@ -47,7 +47,7 @@
   <section>
     <div class="logo">🗄</div>
     <h1>Mediathek Plus aufs NAS</h1>
-    <p>Trag ein, wo deine Filme, Serien und Dokus liegen – darunter steht die fertige <code>docker-compose.yml</code> für den Container Manager der Synology (oder <code>docker compose</code> auf jedem anderen NAS). Alles bleibt in deinem Browser, nichts wird gesendet. Schritt für Schritt: <a href="https://github.com/7hdmm9pp2w-code/MediathekExtractor-Releases/blob/main/NAS.md">Anleitung</a>.</p>
+    <p>Trag ein, wo deine Filme, Serien und Dokus liegen – darunter steht die fertige <code>docker-compose.yml</code> für den Container Manager der Synology (oder <code>docker compose</code> auf jedem anderen NAS). Alles bleibt in deinem Browser, nichts wird gesendet. Schritt für Schritt: <a href="https://github.com/7hdmm9pp2w-code/Mediathek-Plus/blob/main/NAS.md">Anleitung</a>.</p>
   </section>
 
   <section>
@@ -75,6 +75,8 @@
       <div class="row"><input id="puid" value="1026" inputmode="numeric" aria-label="PUID"><input id="pgid" value="100" inputmode="numeric" aria-label="PGID"></div>
     </div>
     <span class="note">Synology: Freigaben liegen meist in <code>/volume1</code>, dein Benutzer ist meist 1026 / 100 (per SSH: <code>id</code>). Andere NAS: Pfad und Kennung entsprechend.</span>
+    <label class="check" style="display: flex; gap: 8px; align-items: center; margin-top: 12px"><input type="checkbox" id="gpu"> Grafikeinheit für Logo-Entfernung nutzen</label>
+    <span class="note">Nur für NAS mit Intel-Prozessor und Grafikeinheit (z. B. DS224+, DS423+, DS724+, DS920+) – macht das Entfernen des Senderlogos ein Vielfaches schneller. Ohne Grafikeinheit (AMD-Ryzen-Modelle wie DS923+, ARM-Modelle wie DS223) weglassen: Fehlt <code>/dev/dri</code>, startet der Container nicht.</span>
   </section>
 
   <section>
@@ -136,6 +138,7 @@
     ];
     if (kinds[1].share) lines.push(`      MX_SERIES: ${q(path(kinds[1]))}`);
     if (kinds[2].share) lines.push(`      MX_DOKUS: ${q(path(kinds[2]))}`);
+    if ($("gpu").checked) lines.push("    devices:", "      - /dev/dri:/dev/dri                 # Grafikeinheit für die Logo-Entfernung");
     lines.push(
       "    volumes:",
       "      - type: bind                        # Einstellungen, Merkliste, Protokoll",
