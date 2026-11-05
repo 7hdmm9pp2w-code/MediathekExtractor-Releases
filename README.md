@@ -20,17 +20,20 @@
 | ✨&nbsp;**Für dich** | Jeden Tag ein Film des Tages und Vorschläge nach deinem Geschmack – mit Begründung („Regie wie bei …“), berechnet auf deinem Rechner; lernt auf Wunsch aus dem, was du in Jellyfin gesehen hast |
 | 🔎&nbsp;**Suchen** | Alle öffentlich-rechtlichen Mediatheken auf einmal – mit Plakat, Bewertung, Genre, Regie und Besetzung |
 | ★&nbsp;**Merkliste** | Filme, Serien und ganze Suchen verfolgen. Taucht etwas auf, meldet sich die App und lädt es auf Wunsch selbst |
-| ⬇&nbsp;**Laden** | Deutsch und Original in einer Datei, Untertitel als Spur, fertig benannt für Plex, Jellyfin und Kodi – Filme, Serien und Dokus auf Wunsch in eigene Ordner |
+| ⬇&nbsp;**Laden** | Deutsch und Original in einer Datei, Untertitel als Spur, fertig benannt für Plex, Jellyfin und Kodi – Filme, Serien und Dokus auf Wunsch in eigene Ordner; Senderlogo auf Wunsch entfernt |
 | 📚&nbsp;**Bibliothek** | Alles Geladene an einem Ort – abspielen, im Ordner zeigen, weiterempfehlen. Mit Jellyfin oder Emby verbunden: auch alles von dort, mit „▶ In Jellyfin abspielen“ |
 | 📤&nbsp;**Teilen** | Filmtipps als Liste mit einem einzigen Link – wer die App hat, übernimmt alle mit einem Klick |
-| 🗄&nbsp;**NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr – einrichten mit dem [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/), [Anleitung](NAS.md) |
+| 🗄&nbsp;**NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr, Einstellungen gelten auf beiden gleich – einrichten mit dem [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/), [Anleitung](NAS.md) |
 
-## Neu in 2.1
+## Neu in 2.2
 
-- **Jellyfin und Emby:** Die App zeigt, was du schon hast und gesehen hast, die Bibliothek enthält auch alles vom Medienserver, und „Passend zu dir“ lernt aus deinen gesehenen Filmen und Favoriten.
-- **Filme, Serien, Dokus getrennt** – je ein Zielordner, auf Wunsch jeder Film in eigenem Ordner.
-- **Originalton immer dazu** als Einstellung, **Fehlgeschlagene wiederholen** in der Warteschlange.
-- **NAS in wenigen Minuten:** [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/) für Container Manager oder SSH.
+- **Senderlogo entfernen, nicht mehr experimentell:** Die App kennt die Logos von 17 Sendern genau und deckt sie sauber ab – mit der Grafikeinheit ein Spielfilm in rund 5 Minuten am Mac, 25 Minuten auf einem Intel-NAS ([so geht's](NAS.md#senderlogo-schneller-mit-der-grafikeinheit)). Auch nachträglich und auf Wunsch nur nachts.
+- **Rechner und NAS abgeglichen:** Qualität, Untertitel, Originalton, Senderlogo und Dateinamen gelten auf beiden gleich.
+- **Schlichter:** Im Modus „Standard“ passen die Einstellungen auf eine Seite, alles Weitere steht unter „Profi“.
+- **Trailer** in der Detailansicht, **Jugendschutz-Filme** (ab 16/18) warten auf 22 bzw. 23 Uhr und laden dann von selbst.
+- **[Hilfe-Seite](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/hilfe/)** zum Nachschlagen – auch im Über-Fenster.
+
+Davor in 2.1: Jellyfin und Emby, Filme/Serien/Dokus in getrennten Ordnern, [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/) fürs NAS.
 
 Alle Änderungen: [Releases](../../releases)
 
@@ -45,6 +48,8 @@ Alle Änderungen: [Releases](../../releases)
 Die Installer sind nicht signiert – was beim ersten Start zu tun ist, steht beim [Download](../../releases/latest). Danach aktualisiert sich die App von selbst.
 
 ## Fehler oder Idee?
+
+Erst nachschlagen? Die [Hilfe](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/hilfe/) erklärt die häufigsten Fragen – von „Download schlägt fehl“ bis „Nicht mehr verfügbar“.
 
 [Issues → New issue](../../issues/new/choose): **Fehler melden** oder **Idee vorschlagen** (kostenloses GitHub-Konto nötig, Meldungen sind öffentlich). Oder direkt in der App: Über → Problem melden…
 
