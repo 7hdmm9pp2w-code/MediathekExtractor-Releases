@@ -25,15 +25,15 @@
 | 📤&nbsp;**Teilen** | Filmtipps als Liste mit einem einzigen Link – wer die App hat, übernimmt alle mit einem Klick |
 | 🗄&nbsp;**NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr, Einstellungen gelten auf beiden gleich – einrichten mit dem [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/), [Anleitung](NAS.md) |
 
-## Neu in 2.2
+## Neu in 2.3
 
-- **Senderlogo entfernen, nicht mehr experimentell:** Die App kennt die Logos von 17 Sendern genau und deckt sie sauber ab – mit der Grafikeinheit ein Spielfilm in rund 5 Minuten am Mac, 25 Minuten auf einem Intel-NAS ([so geht's](NAS.md#senderlogo-schneller-mit-der-grafikeinheit)). Auch nachträglich und auf Wunsch nur nachts.
-- **Rechner und NAS abgeglichen:** Qualität, Untertitel, Originalton, Senderlogo und Dateinamen gelten auf beiden gleich.
-- **Schlichter:** Im Modus „Standard“ passen die Einstellungen auf eine Seite, alles Weitere steht unter „Profi“.
-- **Trailer** in der Detailansicht, **Jugendschutz-Filme** (ab 16/18) warten auf 22 bzw. 23 Uhr und laden dann von selbst.
-- **[Hilfe-Seite](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/hilfe/)** zum Nachschlagen – auch im Über-Fenster.
+- **Robuster:** Bricht ein Download mit HTTP/2-Fehler ab, lädt die App über HTTP/1.1 an derselben Stelle weiter. Klappt der Originalton nicht, bleibt die deutsche Fassung erhalten.
+- **Logo entfernen der Reihe nach:** läuft als eigener Auftrag nach dem Download, immer nur einer – zehn Serienfolgen bremsen sich nicht mehr gegenseitig aus.
+- **„Neu dabei“** bei den Empfehlungen zeigt zuerst, was seit dem letzten Mal hinzugekommen ist; **„Für dich“** lässt sich zuklappen.
+- **Besser bei …:** Läuft ein Film bei mehreren Sendern, zeigt die App, wo es ihn mit Originalton oder länger gibt. Ablaufdatum jetzt auch bei der ARD.
+- **Aufgeräumt:** nur noch die Oberfläche mit Seitenleiste, Standard/Profi unten in den Einstellungen, Über-Fenster mit Hilfe-Knopf.
 
-Davor in 2.1: Jellyfin und Emby, Filme/Serien/Dokus in getrennten Ordnern, [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/) fürs NAS.
+Davor in 2.2: Senderlogo entfernen (17 Sender), Rechner und NAS abgeglichen, Trailer, Jugendschutz-Filme laden abends von selbst, [Hilfe-Seite](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/hilfe/).
 
 Alle Änderungen: [Releases](../../releases)
 
