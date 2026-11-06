@@ -17,7 +17,7 @@
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 16px; }
   main { max-width: 720px; margin: 0 auto; }
   section { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; scroll-margin-top: 12px; }
-  .logo { font-size: 32px; }
+  .logo { width: 56px; height: 56px; border-radius: 12px; display: block; }
   h1 { font-size: 20px; margin: 6px 0 4px; }
   h2 { font-size: 17px; margin: 0 0 10px; }
   h3 { font-size: 15px; margin: 16px 0 4px; }
@@ -44,9 +44,9 @@
 <body>
 <main>
   <section>
-    <div class="logo">📺</div>
+    <img class="logo" src="../icon.png" alt="">
     <h1 id="oben">Mediathek Plus – Hilfe</h1>
-    <p>Das Wichtigste zum Nachschlagen. Fehlt etwas? Im Über-Fenster der App unter „Idee vorschlagen…“ oder „Problem melden…“ Bescheid geben.</p>
+    <p>Das Wichtigste zum Nachschlagen. Fehlt etwas? Im Über-Fenster der App unter „Idee vorschlagen…“ oder „Problem melden…“ Bescheid geben. <a href="https://github.com/7hdmm9pp2w-code/Mediathek-Plus">Mediathek Plus auf GitHub ↗</a></p>
     <nav aria-label="Inhalt">
       <a href="#start">Erster Start</a>
       <a href="#aufbau">Aufbau</a>
@@ -88,7 +88,7 @@
   <section id="aufbau">
     <h2>Aufbau</h2>
     <table>
-      <tr><td>✨ Für dich</td><td>Film des Tages, Tipps von filmdienst.de und den Mediathekperlen, dazu „Passend zu dir“ – Vorschläge nach deinen Downloads und deiner Merkliste. Was dich nicht interessiert, verschwindet mit ✕.</td></tr>
+      <tr><td>✨ Für dich</td><td>Film des Tages, Tipps von filmdienst.de und den Mediathekperlen, dazu „Passend zu dir“ – Vorschläge nach deinen Downloads und deiner Merkliste. Was dich nicht interessiert, verschwindet mit ✕. Ein Klick auf „Für dich“ klappt Film des Tages und Vorschläge zu; „neu dabei“ sortiert die Tipps nach dem, was zuletzt hinzugekommen ist.</td></tr>
       <tr><td>🔎 Mediathek</td><td>Suche in allen öffentlich-rechtlichen Mediatheken auf einmal.</td></tr>
       <tr><td>🎬 Kostenlose Filme</td><td>Spielfilme, die irgendwo legal kostenlos laufen (von kinogrid.com).</td></tr>
       <tr><td>📚 Bibliothek</td><td>Alles, was du geladen hast: abspielen, im Ordner zeigen, weiterempfehlen.</td></tr>
@@ -155,8 +155,8 @@
     <h2>Senderlogo entfernen</h2>
     <p>Die App deckt das Senderlogo in der Ecke ab, damit es beim Anschauen nicht stört. Sie kennt die Logos von 17 Sendern (ARD, ZDF, arte, 3sat, die meisten Dritten, KiKA, Phoenix …); vom Logo bleibt meist kaum etwas übrig.</p>
     <ul>
-      <li><b>Einschalten:</b> Profi-Modus, Einstellungen → Download → „Senderlogo entfernen“. Einzelne Filme trotzdem mit Logo: Pfeil am Knopf → „Mit Senderlogo laden“.</li>
-      <li><b>Nachträglich:</b> Bei fertigen Downloads in der Warteschlange und in der Bibliothek gibt es „Senderlogo entfernen“ – im Profi-Modus ersetzt es bei geladenen Filmen mit Logo den Download-Knopf.</li>
+      <li><b>Einschalten:</b> Profi-Modus, Einstellungen → Download → „Senderlogo entfernen“. Einzelne Filme trotzdem mit Logo: Pfeil am Knopf → „Mit Logo laden“. Das Entfernen läuft nach dem Download als eigener Auftrag – immer einer nach dem anderen, damit jeder mit voller Geschwindigkeit rechnet.</li>
+      <li><b>Nachträglich:</b> Bei fertigen Downloads in der Warteschlange und in der Bibliothek gibt es „Logo entfernen“ – im Profi-Modus ersetzt es bei geladenen Filmen mit Logo den Download-Knopf.</li>
       <li><b>Nachts:</b> Mit „Erst nachts entfernen (1–6 Uhr)“ sind Downloads sofort da, gerechnet wird erst nachts – auf dem NAS wie am Rechner. Der Rechner muss dafür eingeschaltet und die App geöffnet sein; während des Entfernens hält die App ihn wach. „Jetzt entfernen“ in der Warteschlange startet einen wartenden Auftrag sofort.</li>
       <li><b>Dauer:</b> Ein Spielfilm braucht auf einem aktuellen Mac rund 5 Minuten. Die App nutzt den Hardware-Encoder, wenn er sauber arbeitet; sonst dauert es deutlich länger.</li>
       <li><b>Gut</b> klappt es bei Filmen, Serien und Dokus. Bei Studiosendungen und Sport lässt die App das Bild lieber unberührt, als Kulissen oder Spielstände zu verwischen.</li>
@@ -176,8 +176,7 @@
 
   <section id="profi">
     <h2>Standard und Profi</h2>
-    <p><b>Standard</b> zeigt nur das Nötigste: Zielordner, Qualität, Originalton, „Für Plex/Jellyfin/Kodi vorbereiten“ und Filminfos. <b>Profi</b> zeigt alle Optionen – Untertitel, Dateinamen-Vorlagen, eigene Ordner für Serien und Dokus, Senderlogo, NAS, Medienserver – und das Protokoll. Umschalten: in den Einstellungen bei „Modus“ (Profi: Bereich Ansicht). Einstellungen aus dem Profi-Modus wirken auch in Standard weiter.</p>
-    <p>Lieber den alten Aufbau ohne Seitenleiste? Profi-Modus, Einstellungen → Ansicht → User Interface → Klassisch.</p>
+    <p><b>Standard</b> zeigt nur das Nötigste: Zielordner, Qualität, Originalton, „Für Plex/Jellyfin/Kodi vorbereiten“ und Filminfos. <b>Profi</b> zeigt alle Optionen – Untertitel, Dateinamen-Vorlagen, eigene Ordner für Serien und Dokus, Senderlogo, NAS, Medienserver – und das Protokoll. Umschalten: unten links in den Einstellungen. Einstellungen aus dem Profi-Modus wirken auch in Standard weiter.</p>
     <a class="top" href="#oben">↑ nach oben</a>
   </section>
 
@@ -207,6 +206,8 @@
     <p>Die App sieht regelmäßig selbst nach und lädt neue Versionen im Hintergrund. Sofort nachsehen: Über-Fenster → „Nach Updates suchen“ (Mac: auch im App-Menü).</p>
     <h3>Datenschutz</h3>
     <p>Kein Konto, kein eigener Server, keine Analyse – Merkliste, Verlauf und Einstellungen bleiben auf deinem Rechner. <a href="https://github.com/7hdmm9pp2w-code/Mediathek-Plus#datenschutz">Einzelheiten</a></p>
+    <h3>Mehr</h3>
+    <p>Downloads, Neuigkeiten und die NAS-Anleitung: <a href="https://github.com/7hdmm9pp2w-code/Mediathek-Plus">Mediathek Plus auf GitHub ↗</a></p>
     <a class="top" href="#oben">↑ nach oben</a>
   </section>
 </main>
