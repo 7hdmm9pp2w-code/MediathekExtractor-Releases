@@ -25,15 +25,15 @@
 | 📤&nbsp;**Teilen** | Filmtipps als Liste mit einem einzigen Link – wer die App hat, übernimmt alle mit einem Klick |
 | 🗄&nbsp;**NAS** | Läuft auch als Docker-Container auf Synology & Co.; die Desktop-App schickt Downloads dorthin, das NAS lädt rund um die Uhr, Einstellungen gelten auf beiden gleich – einrichten mit dem [yml-Baukasten](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/nas/), [Anleitung](NAS.md) |
 
-## Neu in 2.3
+## Neu in 2.4
 
-- **Robuster:** Bricht ein Download mit HTTP/2-Fehler ab, lädt die App über HTTP/1.1 an derselben Stelle weiter. Klappt der Originalton nicht, bleibt die deutsche Fassung erhalten.
-- **Logo entfernen der Reihe nach:** läuft als eigener Auftrag nach dem Download, immer nur einer – zehn Serienfolgen bremsen sich nicht mehr gegenseitig aus.
-- **„Neu dabei“** bei den Empfehlungen zeigt zuerst, was seit dem letzten Mal hinzugekommen ist; **„Für dich“** lässt sich zuklappen.
-- **Besser bei …:** Läuft ein Film bei mehreren Sendern, zeigt die App, wo es ihn mit Originalton oder länger gibt. Ablaufdatum jetzt auch bei der ARD.
-- **Aufgeräumt:** nur noch die Oberfläche mit Seitenleiste, Standard/Profi unten in den Einstellungen, Über-Fenster mit Hilfe-Knopf.
+- **Suche findet mehr:** englische und Originaltitel („Anatomy of a Fall“), Akzente egal („Penelope Cruz“), „Meintest du …?“ bei Tippfehlern, „Filme mit …“ bei bekannten Namen. Treffer kommen sofort, die ARTE-Ergänzung läuft im Hintergrund.
+- **Originalton sichtbar:** „+ Englisch“ in Liste und Postern; Serienseiten (z. B. ein geteilter ZDF-Link) finden die Originalfassungen je Folge. Die Original-Tonspur trägt jetzt die richtige Sprache.
+- **Seitenleiste:** laufende Downloads unten mit Fortschritt, Zähler für Neues in „Für dich“ und der Bibliothek (mit dem NAS abgeglichen).
+- **Warteschlange:** in der Höhe ziehbar, Klick auf einen Titel zeigt die Details; Downloads laufen weiter, während der Originalton angehängt wird.
+- **Update direkt im Über-Fenster:** „Nach Updates suchen“ bietet gleich „Jetzt aktualisieren“ an.
 
-Davor in 2.2: Senderlogo entfernen (17 Sender), Rechner und NAS abgeglichen, Trailer, Jugendschutz-Filme laden abends von selbst, [Hilfe-Seite](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/hilfe/).
+Davor in 2.3: Downloads robuster bei HTTP/2-Abbrüchen, Logo entfernen der Reihe nach, „Neu dabei“ bei den Empfehlungen. In 2.2: Senderlogo entfernen (17 Sender), Rechner und NAS abgeglichen, [Hilfe-Seite](https://7hdmm9pp2w-code.github.io/Mediathek-Plus/hilfe/).
 
 Alle Änderungen: [Releases](../../releases)
 
